@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-	<title>TabelNama</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/pages/auth.css">
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    table {
+      width: 50%;
+      margin-top: 13%;
+    }
+    
+    table.center {
+      margin-left: auto; 
+      margin-right: auto;
+    }
+    </style>
 </head>
+
 <body>
-  <table class="table">
+  <table class="center">
     <thead>
       <tr>
-        <th scope="col">Ubah</th>
+        <th scope="col">Tambah</th>
         <th scope="col">Hapus</th>
         <th scope="col">Edit</th>
         <th scope="col">Username</th>
@@ -19,7 +41,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Ubah</button></a></td>
+        <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Tambah</button></a></td>
         <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Hapus</button></a></td>
         <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Edit</button></a></td>
         <td>$username</td>
