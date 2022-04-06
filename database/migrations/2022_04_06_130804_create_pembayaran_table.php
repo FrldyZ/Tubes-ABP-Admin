@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('oleh', function (Blueprint $table) {
+        Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
-            $table->string('gambar');
-            $table->string('nama');
-            $table->text('deskripsi');
-            $table->integer('terjual');
+            $table->bigInteger('total_harga');
+            $table->bigInteger('id_pemesanan')->unsigned();
+            $table->foreign('id_pemesanan')->references('id')->on('pemesanan');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('oleh');
+        Schema::dropIfExists('pembayaran');
     }
 };
