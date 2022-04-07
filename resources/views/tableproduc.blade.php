@@ -29,22 +29,25 @@
 <body>
   <table class="center">
     <thead>
-      <p><a href="form.html" ><button type="button" class="btn btn-primary">Tambah</button></a></p>
       <tr>
+        <th scope="col">Tambah</th>
         <th scope="col">Hapus</th>
         <th scope="col">Edit</th>
-        <th scope="col">Username</th>
         <th scope="col">Nama</th>
-        <th scope="col">Telpon</th>
+        <th scope="col">Deskripsi</th>
+        <th scope="col">Jumlah</th>
+        <th scope="col">Terjual</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Tambah</button></a></td>
         <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Hapus</button></a></td>
         <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Edit</button></a></td>
-        <td>$username</td>
         <td>$nama</td>
-        <td>$telpon</td>
+        <td>$deskripsi</td>
+        <td>$jumlah</td>
+        <td>$terjual</td>
       </tr>
     </tbody>
   </table>

@@ -22,3 +22,6 @@ Route::get('/table.html', function () {
 Route::get('/form.html', function () {
     return view('form');
 });
+Route::get('/tableproduc.html', function () {
+    return view('tableproduc');
+});

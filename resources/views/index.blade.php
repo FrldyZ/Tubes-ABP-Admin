@@ -31,18 +31,17 @@
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
                         </div>
                     </div>
-                </div>
+                </div>                
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
-
+<!--
                         <li class="sidebar-item active ">
                             <a href="index.html" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
-
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
@@ -195,14 +194,14 @@
                                 </li>
                             </ul>
                         </li>
-
+                    -->
                         <li class="sidebar-item  ">
                             <a href="table.html" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
                                 <span>Table</span>
                             </a>
                         </li>
-
+<!--
                         <li class="sidebar-item  ">
                             <a href="table-datatable.html" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
@@ -314,7 +313,7 @@
                                 <span>Checkout Page</span>
                             </a>
                         </li>
-
+                    -->
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-person-badge-fill"></i>
@@ -332,7 +331,7 @@
                                 </li>
                             </ul>
                         </li>
-
+<!--
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-x-octagon-fill"></i>
@@ -373,7 +372,7 @@
                                 <span>Donate</span>
                             </a>
                         </li>
-
+                    -->
                     </ul>
                 </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
