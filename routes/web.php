@@ -25,3 +25,14 @@ Route::get('/form.html', function () {
 Route::get('/tableproduc.html', function () {
     return view('tableproduc');
 });
+Route::get('/auth-login.html', function (){
+    return view('auth-login');
+});
+
+Route::get('/auth-register.html', function (){
+    return view('auth-register');
+});
+
+Route::get('/auth-forgot-password.html', function (){
+    return view('auth-forgot-password');
+});
