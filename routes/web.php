@@ -36,3 +36,5 @@ Route::get('/auth-register.html', function (){
 Route::get('/auth-forgot-password.html', function (){
     return view('auth-forgot-password');
 });
+
+Route::post('/register-user',[RegisterController::class,'register-user'])->name('register-user');

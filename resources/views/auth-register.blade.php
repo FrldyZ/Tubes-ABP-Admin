@@ -24,7 +24,14 @@
                     <h1 class="auth-title">Sign Up</h1>
                     <p class="auth-subtitle mb-5">Input your data to register to our website.</p>
 
-                    <form action="index.html">
+                    <form action="{{ route('register-user') }}" method="post">
+                        @if (Session::has('success'))
+                            <div class="alert alert-success" role="alert">{{ Session::get('success') }}</div>
+                        @endif
+                        @csrf
+                        @if (Session::has('fail'))
+                            <div class="alert alert-danger">{{ Session::get('Fail') }}</div>
+                        @endif
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" class="form-control form-control-xl" placeholder="Email">
                             <div class="form-control-icon">
