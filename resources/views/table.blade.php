@@ -16,14 +16,21 @@
     }
     table {
       width: 50%;
+
+    }
+
+    p {
+      margin-left: auto; 
+      margin-right: auto;
+      width: 50%;
       margin-top: 13%;
     }
-    
+
     table.center {
       margin-left: auto; 
       margin-right: auto;
     }
-    </style>
+  </style>
 </head>
 
 <body>

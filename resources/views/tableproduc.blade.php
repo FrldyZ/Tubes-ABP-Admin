@@ -16,21 +16,27 @@
     }
     table {
       width: 50%;
+    }
+
+    p {
+      margin-left: auto; 
+      margin-right: auto;
+      width: 50%;
       margin-top: 13%;
     }
-    
+
     table.center {
       margin-left: auto; 
       margin-right: auto;
     }
-    </style>
+  </style>
 </head>
 
 <body>
   <table class="center">
     <thead>
+      <p><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Tambah</button></a></p>
       <tr>
-        <th scope="col">Tambah</th>
         <th scope="col">Hapus</th>
         <th scope="col">Edit</th>
         <th scope="col">Nama</th>
@@ -41,7 +47,6 @@
     </thead>
     <tbody>
       <tr>
-        <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Tambah</button></a></td>
         <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Hapus</button></a></td>
         <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Edit</button></a></td>
         <td>$nama</td>
