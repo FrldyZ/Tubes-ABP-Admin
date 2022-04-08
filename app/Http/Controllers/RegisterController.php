@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
-use App\Models\akun;
+use App\Models\admin;
 
 class RegisterController extends Controller
 {
@@ -28,7 +27,7 @@ class RegisterController extends Controller
             'password'=>'required'
         ]);
 
-        $user = new akun();
+        $user = new admin();
         $user->email = $request->email;
         $user->username = $request->username;
         $user->password = Hash::make($request->password);
