@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,4 @@ Route::get('/auth-forgot-password.html', function (){
     return view('auth-forgot-password');
 });
 
-Route::post('/register-user',[RegisterController::class,'register-user'])->name('register-user');
+Route::post('/register-user',[RegisterController::class,'registerUser'])->name('register-user');
