@@ -8,23 +8,19 @@ use App\Models\admin;
 
 class RegisterController extends Controller
 {
-    public function index()
-    {
-
-        return view('register.index', [
+    public function index(){
+        return view('auth-register', [
             'title'=> 'Register',
             'active' => 'register'
         ]);
-
     }
 
-    public function registerUser(Request $request)
+    public function store(Request $request)
     {
-
-        $request->validate([
-            'email'=>'required| email| unique:admin', //unique:users
-            'username'=>'required',
-            'password'=>'required'
+        $validatedData = $request->validate([
+            'email'=>'required|email:dns|unique:admin', //unique:users
+            'username'=>'required|min:3|max:255|unique:admin',
+            'password'=>'required|min:5|max:255'
         ]);
 
         $user = new admin();
@@ -32,12 +28,7 @@ class RegisterController extends Controller
         $user->username = $request->username;
         $user->password = Hash::make($request->password);
         $res = $user->save();
-        if($res)
-        {
-            return back()->with('Success', 'You have registered succesfully');
-        }else{
-            return back()->with('Fail', 'Something wrong');
-        }
-        
+
+        return redirect('/register')->with('Success', 'You have registered succesfully');
     }
 }

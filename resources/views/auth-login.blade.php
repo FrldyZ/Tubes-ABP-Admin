@@ -14,7 +14,6 @@
 
 <body>
     <div id="auth">
-
         <div class="row h-100">
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
@@ -37,19 +36,18 @@
                                 <i class="bi bi-shield-lock"></i>
                             </div>
                         </div>
-                        <div class="form-check form-check-lg d-flex align-items-end">
+                        <!-- <div class="form-check form-check-lg d-flex align-items-end">
                             <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label text-gray-600" for="flexCheckDefault">
                                 Keep me logged in
                             </label>
-                        </div>
+                        </div> -->
                         <button class="btn btn-warning btn-block btn-lg shadow-lg mt-5">Log in</button>
                     </form>
                     <div class="text-center mt-5 text-lg fs-4">
-                        <p class="text-gray-600">Don't have an account? <a href="auth-register.html"
-                                class="font-bold">Sign
-                                up</a>.</p>
-                        <p><a class="font-bold" href="auth-forgot-password.html">Forgot password?</a>.</p>
+                        <p class="text-gray-600">Don't have an account? 
+                            <a href="register" class="font-bold">Sign up</a>.
+                        </p>
                     </div>
                 </div>
             </div>
