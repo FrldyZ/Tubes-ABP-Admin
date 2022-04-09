@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+@extends('layouts/main');
+@section('heading')
+    <h3>Profile Pengguna</h3>
+@endsection
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -32,7 +36,8 @@
   </style>
 </head>
 
-<body>
+<body> -->
+@section('content')
   <table class="center">
     <thead>
       <p><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Tambah</button></a></p>
@@ -56,6 +61,6 @@
       </tr>
     </tbody>
   </table>
-
-</body>
-</html>
+  @endsection
+<!-- </body>
+</html> -->

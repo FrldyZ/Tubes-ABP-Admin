@@ -29,6 +29,8 @@ Route::get('/dashboard', [HomeController::class,'dashboard'])->middleware('auth:
 Route::get('/table.html', function () {
     return view('table');
 });
+Route::get('/DaftarOleh', [HomeController::class,'viewOleh'])->middleware('auth:admin');
+
 Route::get('/form.html', function () {
     return view('form');
 })->middleware('auth:admin');

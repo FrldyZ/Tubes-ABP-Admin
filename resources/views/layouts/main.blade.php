@@ -41,10 +41,10 @@
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="sidebar-item  ">
-                            <a href="table.html" class='sidebar-link'>
+                        <li class="sidebar-item {{ ($title === 'Daftar Oleh') ? 'active' : '' }}  ">
+                            <a href="/DaftarOleh" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
-                                <span>Table</span>
+                                <span>Daftar Oleh</span>
                             </a>
                         </li>
                         <li class="sidebar-item  ">

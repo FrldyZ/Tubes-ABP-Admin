@@ -15,4 +15,10 @@ class HomeController extends Controller
         ]);
         
     }
+
+    public function viewOleh(){
+        return view('tableOleh',[
+            'title'=> 'Daftar Oleh'
+        ]);
+    }
 }
