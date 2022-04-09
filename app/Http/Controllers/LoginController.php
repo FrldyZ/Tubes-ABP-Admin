@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function index(){
-        if (Auth::guard('admin')->check()) return redirect('/home');
+        if (Auth::guard('admin')->check()) return redirect('/dashboard');
         return view('auth-login',[
             'title' => 'Login',
         ]);
@@ -22,7 +22,7 @@ class LoginController extends Controller
 
         if(Auth::guard('admin')->attempt(['username'=>$request->username, 'password'=>$request->password])){
             $request->session()->regenerate();
-            return redirect()->intended('/home');
+            return redirect()->intended('/dashboard');
         }
 
         return back()->with('loginError', 'Login failed');

@@ -18,23 +18,24 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return redirect('/login');
 });
-Route::get('/register', [RegisterController::class,'index']);
+Route::get('/register', [RegisterController::class,'index'])->middleware('guest');
 Route::post('/register',[RegisterController::class,'store']);
 
-Route::get('/login', [LoginController::class,'index']);
+Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class,'authenticate']);
 Route::get('/logout', [LoginController::class,'logout']);
 
-Route::get('/home', [HomeController::class,'index']);
+Route::get('/dashboard', [HomeController::class,'dashboard'])->middleware('auth:admin');
 Route::get('/table.html', function () {
     return view('table');
 });
 Route::get('/form.html', function () {
     return view('form');
-});
+})->middleware('auth:admin');
+
 Route::get('/tableproduc.html', function () {
     return view('tableproduc');
-});
+})->middleware('auth:admin');
 
 
 // Route::get('/auth-forgot-password.html', function (){

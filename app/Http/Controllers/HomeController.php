@@ -7,11 +7,10 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    public function index(){
-        if (Auth::guard('admin')->check()){
-            return view('index');
-        }
-        return redirect('/login');
+    public function dashboard(){
+        //if (Auth::guard('admin')->check()) return view('index');
+        //return redirect('/login');
+        return view('index');
         
     }
 }

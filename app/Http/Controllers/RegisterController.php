@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\admin;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
     public function index(){
+        if (Auth::guard('admin')->check()) return redirect('/dashboard');
         return view('auth-register', [
             'title'=> 'Register',
             'active' => 'register'
