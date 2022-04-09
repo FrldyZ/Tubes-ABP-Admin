@@ -10,7 +10,9 @@ class HomeController extends Controller
     public function dashboard(){
         //if (Auth::guard('admin')->check()) return view('index');
         //return redirect('/login');
-        return view('index');
+        return view('index', [
+            'title'=> 'Dashboard'
+        ]);
         
     }
 }
