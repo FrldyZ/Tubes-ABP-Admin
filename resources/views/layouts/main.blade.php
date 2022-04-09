@@ -36,7 +36,7 @@
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
                         <li class="sidebar-item {{ ($title === 'Dashboard') ? 'active' : '' }} ">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="/dashboard" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
