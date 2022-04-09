@@ -14,10 +14,11 @@ use App\Http\Controllers\RegisterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/login', [LoginController::class,'index']);
 Route::get('/register', [RegisterController::class,'index']);
 Route::post('/register',[RegisterController::class,'store']);
 
+Route::get('/login', [LoginController::class,'index']);
+Route::post('/login', [LoginController::class,'authenticate']);
 Route::get('/', function () {
     return view('index');
 });
