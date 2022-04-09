@@ -331,6 +331,12 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="sidebar-item  ">
+                            <a href="/logout" class='sidebar-link'>
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Log Out</span>
+                            </a>
+                        </li>
 <!--
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>

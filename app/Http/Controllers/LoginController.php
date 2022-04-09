@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function index(){
+        if (Auth::guard('admin')->check()) return redirect('/home');
         return view('auth-login',[
             'title' => 'Login',
         ]);
@@ -21,9 +22,16 @@ class LoginController extends Controller
 
         if(Auth::guard('admin')->attempt(['username'=>$request->username, 'password'=>$request->password])){
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('/home');
         }
 
-        return back()->with('loginError', 'Login failed!');
+        return back()->with('loginError', 'Login failed');
+    }
+
+    public function logout(){
+        Auth::guard('admin')->logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect('/login');
     }
 }

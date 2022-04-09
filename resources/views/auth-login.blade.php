@@ -22,7 +22,9 @@
                     </div>
                     <h1 class="auth-title">Log in.</h1>
                     <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
-
+                    @if (session()->has('loginError'))
+                        <div class="alert alert-danger" role="alert">{{ session('loginError') }}</div>
+                    @endif
                     <form action="/login" method="post">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
