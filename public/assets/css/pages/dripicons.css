@@ -2,7 +2,7 @@
 .glyphs.character-mapping{margin:0;padding:0;border:none;}
 .glyphs.character-mapping li{margin:0;display:inline-block;width:90px;border-radius:4px;}
 .glyphs.character-mapping .icon{margin:10px 0 10px 15px;padding:15px;position:relative;width:55px;height:55px;color:#398FF7 !important;overflow:hidden;-webkit-border-radius:3px;border-radius:3px;font-size:32px;}
-.glyphs.character-mapping .icon svg{fill:#398FF7}
+.glyphs.character-mapping .icon svg{fill:#ffc107}
 .glyphs.character-mapping li:hover .icon{color:#fff !important;}
 .glyphs.character-mapping li:hover .icon svg{fill:#fff}
 .glyphs.character-mapping li:hover input{opacity:100;}
