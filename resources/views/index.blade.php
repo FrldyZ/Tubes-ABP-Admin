@@ -1,7 +1,7 @@
 @extends('layouts/main');
 
 @section('heading')
-    <h3>Profile Statistics</h3>
+    <h3>Oleh-Shop Statistics</h3>
 @endsection
 
 @section('content')
@@ -18,8 +18,8 @@
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h6 class="text-muted font-semibold">Profile Views</h6>
-                                <h6 class="font-extrabold mb-0">112.000</h6>
+                                <h6 class="text-muted font-semibold">Website Views</h6>
+                                <h6 class="font-extrabold mb-0">5</h6>
                             </div>
                         </div>
                     </div>
@@ -35,8 +35,8 @@
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h6 class="text-muted font-semibold">Followers</h6>
-                                <h6 class="font-extrabold mb-0">183.000</h6>
+                                <h6 class="text-muted font-semibold">Registered Admin</h6>
+                                <h6 class="font-extrabold mb-0">3</h6>
                             </div>
                         </div>
                     </div>
@@ -48,18 +48,18 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="stats-icon green">
-                                    <i class="iconly-boldAdd-User"></i>
+                                    <i class="iconly-boldProfile"></i>
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <h6 class="text-muted font-semibold">Following</h6>
-                                <h6 class="font-extrabold mb-0">80.000</h6>
+                                <h6 class="text-muted font-semibold">Registered User</h6>
+                                <h6 class="font-extrabold mb-0">2</h6>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-6 col-lg-3 col-md-6">
+            <!-- <div class="col-6 col-lg-3 col-md-6">
                 <div class="card">
                     <div class="card-body px-3 py-4-5">
                         <div class="row">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="row">
             <div class="col-12">
@@ -89,7 +89,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12 col-xl-4">
                 <div class="card">
                     <div class="card-header">
@@ -264,5 +264,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 @endsection
