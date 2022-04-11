@@ -40,7 +40,7 @@
                         </li>
                         <li class="sidebar-item {{ ($title === 'Daftar Oleh') ? 'active' : '' }}  ">
                             <a href="/DaftarOleh" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
+                                <i class="bi bi-box"></i>
                                 <span>Oleh-Oleh</span>
                             </a>
                         </li>
