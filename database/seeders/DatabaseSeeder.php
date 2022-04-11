@@ -22,29 +22,68 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         //admin
-        $user = new admin();
-        $user->email = 'kevin@mail.com';
-        $user->username = 'kevin';
-        $user->password = Hash::make('12345');
-        $user->save();
+        $admin = new admin();
+        $admin->email = 'kevin@mail.com';
+        $admin->username = 'kevin';
+        $admin->password = Hash::make('12345');
+        $admin->save();
 
-        $user = new admin();
-        $user->email = 'kris@mail.com';
-        $user->username = 'kris';
-        $user->password = Hash::make('67891');
-        $user->save();
+        $admin = new admin();
+        $admin->email = 'kris@mail.com';
+        $admin->username = 'kris';
+        $admin->password = Hash::make('67891');
+        $admin->save();
 
-        $user = new admin();
-        $user->email = 'imam@mail.com';
-        $user->username = 'imam';
-        $user->password = Hash::make('45678');
-        $user->save();
+        $admin = new admin();
+        $admin->email = 'imam@mail.com';
+        $admin->username = 'imam';
+        $admin->password = Hash::make('45678');
+        $admin->save();
+
+        //pengguna
+        $pengguna = new pengguna();
+        $pengguna->username = 'eschreck';
+        $pengguna->nama = 'esch reck';
+        $pengguna->telepon = '081288818282';
+        $pengguna->password = Hash::make('eshhrck');
+
+        $pengguna = new pengguna();
+        $pengguna->username = 'cliffhanger1988';
+        $pengguna->nama = 'cliff hanger';
+        $pengguna->telepon = '081288818283';
+        $pengguna->password = Hash::make('clifs');
+
+        $pengguna = new pengguna();
+        $pengguna->username = 'babaksabri';
+        $pengguna->nama = 'babak sabri';
+        $pengguna->telepon = '081288818284';
+        $pengguna->password = Hash::make('babaksa');
+        
+        $pengguna = new pengguna();
+        $pengguna->username = 'and117333';
+        $pengguna->nama = 'andy sabri';
+        $pengguna->telepon = '081288818285';
+        $pengguna->password = Hash::make('and1173');
+
+        $pengguna = new pengguna();
+        $pengguna->username = 'katgen';
+        $pengguna->nama = 'katgen sabri';
+        $pengguna->telepon = '081288818286';
+        $pengguna->password = Hash::make('katge');
+
+        $pengguna = new pengguna();
+        $pengguna->username = 'clcvulb';
+        $pengguna->nama = 'clcvulb sabri';
+        $pengguna->telepon = '081288818287';
+        $pengguna->password = Hash::make('clcvu');
 
         //oleh
 
         //pemesanan
 
         //pembayaran
-        
+
+
+
     }
 }
