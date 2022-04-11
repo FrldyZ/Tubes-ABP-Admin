@@ -39,7 +39,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item {{ ($title === 'Daftar Oleh') ? 'active' : '' }}  ">
-                            <a href="/DaftarOleh" class='sidebar-link'>
+                            <a href="/oleh" class='sidebar-link'>
                                 <i class="bi bi-box"></i>
                                 <span>Oleh-Oleh</span>
                             </a>

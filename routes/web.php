@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\olehController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,18 +27,10 @@ Route::post('/login', [LoginController::class,'authenticate']);
 Route::get('/logout', [LoginController::class,'logout']);
 
 Route::get('/dashboard', [HomeController::class,'dashboard'])->middleware('auth:admin');
-Route::get('/table.html', function () {
-    return view('table');
-});
-Route::get('/DaftarOleh', [HomeController::class,'viewOleh'])->middleware('auth:admin');
 
-Route::get('/form.html', function () {
-    return view('form');
-})->middleware('auth:admin');
-
-Route::get('/tableproduc.html', function () {
-    return view('tableproduc');
-})->middleware('auth:admin');
+Route::get('/oleh', [olehController::class,'index'])->middleware('auth:admin');
+Route::post('/oleh/edit',[olehController::class,'store'])->middleware('auth:admin');
+Route::post('/oleh/delete', [olehController::class,'delete'])->middleware('auth:admin');
 
 
 // Route::get('/auth-forgot-password.html', function (){
