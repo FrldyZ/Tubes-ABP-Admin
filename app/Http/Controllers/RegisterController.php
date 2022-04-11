@@ -19,7 +19,7 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'email'=>'required|email:dns|unique:admin', //unique:users
             'username'=>'required|min:3|max:255|unique:admin',
             'password'=>'required|min:5|max:255'
@@ -29,7 +29,7 @@ class RegisterController extends Controller
         $user->email = $request->email;
         $user->username = $request->username;
         $user->password = Hash::make($request->password);
-        $res = $user->save();
+        $user->save();
 
         return redirect('/register')->with('Success', 'You have registered succesfully');
     }

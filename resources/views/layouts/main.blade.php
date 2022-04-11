@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.svg')}}" type="image/x-icon">
 </head>
+
 <body>
     <div id="app">
         <div id="sidebar" class="active">
@@ -28,7 +29,7 @@
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
                         </div>
                     </div>
-                </div>                
+                </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
@@ -75,14 +76,15 @@
                         <p>2022 &copy; Oleh-Shop</p>
                     </div>
                     <div class="float-end">
-                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                                href="">Oleh-Shop</a></p>
+                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a href="">Oleh-Shop</a></p>
                     </div>
                 </div>
             </footer>
         </div>
     </div>
-    <script>feather.replace()</script>
+    <script>
+        feather.replace()
+    </script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="{{asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>

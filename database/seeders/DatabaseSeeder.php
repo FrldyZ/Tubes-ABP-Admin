@@ -84,6 +84,11 @@ class DatabaseSeeder extends Seeder
         $pengguna->save();
 
         //oleh
+        $oleh = new oleh();
+        $oleh->nama = 'bakpia';
+        $oleh->gambar = 'gambarOleh/hz3HEw6GbQxA0iv4I2tjJjQ5Vd84BuzCL8u63XBV.png';
+        $oleh->deskripsi = 'Bakpia adalah makanan yang terbuat dari campuran kacang hijau dengan gula yang dibungkus dengan tepung lalu dipanggang.';
+        $oleh->terjual = 0;
 
         //pemesanan
 

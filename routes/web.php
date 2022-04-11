@@ -29,7 +29,8 @@ Route::get('/logout', [LoginController::class,'logout']);
 Route::get('/dashboard', [HomeController::class,'dashboard'])->middleware('auth:admin');
 
 Route::get('/oleh', [olehController::class,'index'])->middleware('auth:admin');
-Route::post('/oleh/edit',[olehController::class,'store'])->middleware('auth:admin');
+Route::post('/oleh/tambah',[olehController::class,'store'])->middleware('auth:admin');
+Route::post('/oleh/edit',[olehController::class,'edit'])->middleware('auth:admin');
 Route::post('/oleh/delete', [olehController::class,'delete'])->middleware('auth:admin');
 
 

@@ -9,7 +9,7 @@
     <div class="card-content mx-3 my-3">
         <div class="table-responsive">
             <!-- button -->
-            <a href="" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahOleh">Tambah</a>
+            <a class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahOleh">Tambah</a>
 
             <!-- modal -->
             <div class="modal fade text-left" id="tambahOleh" tabindex="-1" role="dialog" aria-labelledby="tambahOlehLabel" aria-hidden="true">
@@ -21,15 +21,35 @@
                                 <i data-feather="x"></i>
                             </button>
                         </div>
-                        <form action="#">
+                        <form action="/oleh/tambah" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="modal-body">
                                 <label>Nama: </label>
                                 <div class="form-group">
-                                    <input type="text" placeholder="Nama Oleh-Oleh" class="form-control" name="nama">
+                                    <input type="text" placeholder="Nama Oleh-Oleh" class="form-control @error('nama') is-invalid @enderror" name="nama" required>
+                                    @error('nama')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <label>Gambar</label>
+                                <div class="form-group">
+                                    <input class="form-control @error('gambar') is-invalid @enderror" type="file" name="gambar">
+                                    @error('gambar')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                                 <label>Deskripsi: </label>
                                 <div class="form-group">
-                                    <textarea rows="3" class="form-control" name="deskripsi"></textarea>
+                                    <textarea rows="3" class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi"></textarea>
+                                    @error('deskripsi')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -37,9 +57,9 @@
                                     <i class="bx bx-x d-block d-sm-none"></i>
                                     <span class="d-none d-sm-block">Close</span>
                                 </button>
-                                <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                <button class="btn btn-primary ml-1">
                                     <i class="bx bx-check d-block d-sm-none"></i>
-                                    <span class="d-none d-sm-block">Tambah</span>
+                                    <span class="d-none d-sm-block">Simpan</span>
                                 </button>
                             </div>
                         </form>
@@ -56,9 +76,10 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($olehs as $oleh)
                     <tr>
-                        <td class="text-bold-500">$nama</td>
-                        <td class="text-bold-500">$terjual</td>
+                        <td class="text-bold-500">{{$oleh->nama}}</td>
+                        <td class="text-bold-500">{{$oleh->terjual}}</td>
                         <td>
                             <!-- View -->
                             <!-- Button -->
@@ -69,15 +90,15 @@
                                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="viewOlehLabel">$nama</h5>
+                                            <h5 class="modal-title" id="viewOlehLabel">{{$oleh->nama}}</h5>
                                             <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
                                                 <i data-feather="x"></i>
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <img src="https://1.bp.blogspot.com/-tjxThEa2wZk/XT5Fea1JqaI/AAAAAAAAC2U/qh03Mzu1dxAzXeGAtxLlR4f8EJoaFZsLQCLcBGAs/w1200-h630-p-k-no-nu/Gambar%2BIlustrasi%2BMalam.jpg" class="img-thumbnail" alt="img">
+                                            <img src="{{ asset('storage/'.$oleh->gambar) }}" width="500px" height="100px" class="img-thumbnail mb-2" alt="img">
                                             <p>
-                                                $deskripsi
+                                                {{$oleh->deskripsi}}
                                             </p>
                                         </div>
                                         <div class="modal-footer">
@@ -162,6 +183,7 @@
                             </div>
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
