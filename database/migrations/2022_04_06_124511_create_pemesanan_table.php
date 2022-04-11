@@ -17,11 +17,13 @@ return new class extends Migration
             $table->id();
             $table->integer('jumlah_item');
             $table->date('tanggal_pemesanan');
-            $table->string('status');
+            // $table->string('status');
             $table->string('username_pengguna',100);
             $table->foreign('username_pengguna')->references('username')->on('pengguna');
             $table->bigInteger('id_oleh')->unsigned();
             $table->foreign('id_oleh')->references('id')->on('oleh');
+            $table->bigInteger('id_pembayaran')->unsigned();
+            $table->foreign('id_pembayaran')->references('id')->on('pembayaran');
             $table->timestamps();
         });
     }

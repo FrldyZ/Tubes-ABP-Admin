@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('total_harga');
-            $table->bigInteger('id_pemesanan')->unsigned();
-            $table->foreign('id_pemesanan')->references('id')->on('pemesanan');
+            $table->string('status');
+            // $table->bigInteger('id_pemesanan')->unsigned();
+            // $table->foreign('id_pemesanan')->references('id')->on('pemesanan');
             $table->timestamps();
         });
     }
