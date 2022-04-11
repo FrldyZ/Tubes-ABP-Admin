@@ -46,36 +46,42 @@ class DatabaseSeeder extends Seeder
         $pengguna->nama = 'esch reck';
         $pengguna->telepon = '081288818282';
         $pengguna->password = Hash::make('eshhrck');
+        $pengguna->save();
 
         $pengguna = new pengguna();
         $pengguna->username = 'cliffhanger1988';
         $pengguna->nama = 'cliff hanger';
         $pengguna->telepon = '081288818283';
         $pengguna->password = Hash::make('clifs');
+        $pengguna->save();
 
         $pengguna = new pengguna();
         $pengguna->username = 'babaksabri';
         $pengguna->nama = 'babak sabri';
         $pengguna->telepon = '081288818284';
         $pengguna->password = Hash::make('babaksa');
+        $pengguna->save();
         
         $pengguna = new pengguna();
         $pengguna->username = 'and117333';
         $pengguna->nama = 'andy sabri';
         $pengguna->telepon = '081288818285';
         $pengguna->password = Hash::make('and1173');
+        $pengguna->save();
 
         $pengguna = new pengguna();
         $pengguna->username = 'katgen';
         $pengguna->nama = 'katgen sabri';
         $pengguna->telepon = '081288818286';
         $pengguna->password = Hash::make('katge');
+        $pengguna->save();
 
         $pengguna = new pengguna();
         $pengguna->username = 'clcvulb';
         $pengguna->nama = 'clcvulb sabri';
         $pengguna->telepon = '081288818287';
         $pengguna->password = Hash::make('clcvu');
+        $pengguna->save();
 
         //oleh
 
