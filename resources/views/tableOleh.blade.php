@@ -36,7 +36,7 @@
                                 <label>Gambar</label>
                                 <div class="form-group">
                                     <img class="img-preview img-fluid mb-3 col-sm-3">
-                                    <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" onchange="previewGambar()">
+                                    <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" onchange="previewGambar()" required>
                                     @error('gambar')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -45,7 +45,7 @@
                                 </div>
                                 <label>Deskripsi: </label>
                                 <div class="form-group">
-                                    <textarea rows="3" class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi"></textarea>
+                                    <textarea rows="3" class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" required></textarea>
                                     @error('deskripsi')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -69,7 +69,16 @@
             </div>
 
             @if (session()->has('Success'))
-                <div class="alert alert-success" role="alert">{{ session('Success') }}</div>
+            <div class="alert alert-success" role="alert">{{ session('Success') }}</div>
+            @endif
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             @endif
             <table class="table table-bordered mb-0">
                 <thead>
@@ -117,26 +126,32 @@
 
                             <!-- edit -->
                             <!-- button -->
-                            <a class="badge bg-warning" data-bs-toggle="modal" data-bs-target="#editOleh"><i data-feather="edit"></i></a>
+                            <a class="badge bg-warning" data-bs-toggle="modal" data-bs-target="{{ '#editOleh'.$oleh->id }}"><i data-feather="edit"></i></a>
                             <!-- modal -->
-                            <div class="modal fade text-left" id="editOleh" tabindex="-1" role="dialog" aria-labelledby="editOlehLabel" aria-hidden="true">
+                            <div class="modal fade text-left" id="{{ 'editOleh'.$oleh->id }}" tabindex="-1" role="dialog" aria-labelledby="{{ 'editOlehLabel'.$oleh->id }}" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title" id="editOlehLabel">Edit</h4>
+                                            <h4 class="modal-title" id="{{ 'editOlehLabel'.$oleh->id }}">Edit</h4>
                                             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                                 <i data-feather="x"></i>
                                             </button>
                                         </div>
-                                        <form action="#">
+                                        <form action="/oleh/edit/{{ $oleh->id }}" method="post" enctype="multipart/form-data">
                                             <div class="modal-body">
+                                                @csrf
                                                 <label>Nama: </label>
                                                 <div class="form-group">
-                                                    <input type="text" placeholder="Nama Oleh-Oleh" class="form-control" name="nama" value="$nama" disabled>
+                                                    <label>{{$oleh->nama}}</label>
+                                                </div>
+                                                <label>Gambar:</label>
+                                                <div class="form-group">
+                                                    <img src="{{ asset('storage/'.$oleh->gambar) }}" class="img-preview img-fluid mb-3 col-sm-3">
+                                                    <input class="form-control" type="file" id="gambar" name="gambar" onchange="previewGambar()">
                                                 </div>
                                                 <label>Deskripsi: </label>
                                                 <div class="form-group">
-                                                    <textarea rows="3" class="form-control" name="deskripsi">$deskripsi</textarea>
+                                                    <textarea rows="3" class="form-control" name="deskripsi">{{$oleh->deskripsi}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
@@ -144,9 +159,9 @@
                                                     <i class="bx bx-x d-block d-sm-none"></i>
                                                     <span class="d-none d-sm-block">Close</span>
                                                 </button>
-                                                <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                                <button class="btn btn-primary ml-1">
                                                     <i class="bx bx-check d-block d-sm-none"></i>
-                                                    <span class="d-none d-sm-block">Tambah</span>
+                                                    <span class="d-none d-sm-block">Simpan</span>
                                                 </button>
                                             </div>
                                         </form>
@@ -196,7 +211,7 @@
 @endsection
 @section('script')
 <script>
-    function previewGambar(){
+    function previewGambar() {
         const gambar = document.querySelector('#gambar');
         const previewGambar = document.querySelector('.img-preview');
 
@@ -205,7 +220,7 @@
         const ofReader = new FileReader();
         ofReader.readAsDataURL(gambar.files[0]);
 
-        ofReader.onload = function(oFREvent){
+        ofReader.onload = function(oFREvent) {
             previewGambar.src = oFREvent.target.result;
         }
     }

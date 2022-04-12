@@ -30,8 +30,8 @@ Route::get('/dashboard', [HomeController::class,'dashboard'])->middleware('auth:
 
 Route::get('/oleh', [olehController::class,'index'])->middleware('auth:admin');
 Route::post('/oleh/tambah',[olehController::class,'store'])->middleware('auth:admin');
-Route::post('/oleh/edit',[olehController::class,'edit'])->middleware('auth:admin');
-Route::post('/oleh/delete', [olehController::class,'delete'])->middleware('auth:admin');
+Route::post('/oleh/edit/{id}',[olehController::class,'edit'])->middleware('auth:admin');
+Route::post('/oleh/delete/{id}', [olehController::class,'delete'])->middleware('auth:admin');
 
 
 // Route::get('/auth-forgot-password.html', function (){
