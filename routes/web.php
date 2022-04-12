@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\olehController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\pemesananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::get('/oleh', [olehController::class,'index'])->middleware('auth:admin');
 Route::post('/oleh/tambah',[olehController::class,'store'])->middleware('auth:admin');
 Route::post('/oleh/edit/{id}',[olehController::class,'edit'])->middleware('auth:admin');
 Route::post('/oleh/delete/{id}', [olehController::class,'delete'])->middleware('auth:admin');
+
+Route::get('/pemesanan', [pemesananController::class,'index'])->middleware('auth:admin');
 
 
 // Route::get('/auth-forgot-password.html', function (){

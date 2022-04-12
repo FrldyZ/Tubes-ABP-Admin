@@ -44,6 +44,12 @@
                                 <span>Oleh-Oleh</span>
                             </a>
                         </li>
+                        <li class="sidebar-item {{ Request::is('pemesanan') ? 'active' : '' }}  ">
+                            <a href="/pemesanan" class='sidebar-link'>
+                                <i class="bi bi-box"></i>
+                                <span>pemesanan</span>
+                            </a>
+                        </li>
                         <li class="sidebar-item  ">
                             <a href="/logout" class='sidebar-link'>
                                 <i class="bi bi-box-arrow-right"></i>
