@@ -28,6 +28,8 @@ class olehController extends Controller
         $oleh->deskripsi = $request->deskripsi;
         $oleh->terjual = 0;
         $oleh->save();
+
+        return redirect('/oleh')->with('Success', 'Data oleh-oleh berhasil ditambahkan');
         //$request->file('gambar')->store('gambarOleh');
     }
     

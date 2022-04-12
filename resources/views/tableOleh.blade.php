@@ -35,7 +35,8 @@
                                 </div>
                                 <label>Gambar</label>
                                 <div class="form-group">
-                                    <input class="form-control @error('gambar') is-invalid @enderror" type="file" name="gambar">
+                                    <img class="img-preview img-fluid mb-3 col-sm-3">
+                                    <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" onchange="previewGambar()">
                                     @error('gambar')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -67,6 +68,9 @@
                 </div>
             </div>
 
+            @if (session()->has('Success'))
+                <div class="alert alert-success" role="alert">{{ session('Success') }}</div>
+            @endif
             <table class="table table-bordered mb-0">
                 <thead>
                     <tr>
@@ -83,10 +87,10 @@
                         <td>
                             <!-- View -->
                             <!-- Button -->
-                            <a class="badge bg-info" data-bs-toggle="modal" data-bs-target="#viewOleh"><i data-feather="eye"></i></a>
+                            <a class="badge bg-info" data-bs-toggle="modal" data-bs-target="{{ '#view'.$oleh->id }}"><i data-feather="eye"></i></a>
 
                             <!-- Modal -->
-                            <div class="modal fade text-left" id="viewOleh" tabindex="-1" role="dialog" aria-labelledby="viewOlehLabel" aria-hidden="true">
+                            <div class="modal fade text-left" id="{{ 'view'.$oleh->id }}" tabindex="-1" role="dialog" aria-labelledby="{{ 'Label'.$oleh->id }}" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -96,7 +100,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <img src="{{ asset('storage/'.$oleh->gambar) }}" width="500px" height="100px" class="img-thumbnail mb-2" alt="img">
+                                            <img src="{{ asset('storage/'.$oleh->gambar) }}" class="img-thumbnail mb-3 mx-auto d-block" width="400" height="500" alt="img">
                                             <p>
                                                 {{$oleh->deskripsi}}
                                             </p>
@@ -189,4 +193,21 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+<script>
+    function previewGambar(){
+        const gambar = document.querySelector('#gambar');
+        const previewGambar = document.querySelector('.img-preview');
+
+        previewGambar.style.display = 'block';
+
+        const ofReader = new FileReader();
+        ofReader.readAsDataURL(gambar.files[0]);
+
+        ofReader.onload = function(oFREvent){
+            previewGambar.src = oFREvent.target.result;
+        }
+    }
+</script>
 @endsection
