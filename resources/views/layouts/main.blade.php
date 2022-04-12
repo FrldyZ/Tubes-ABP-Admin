@@ -22,7 +22,7 @@
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <!-- <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a> -->
+                            <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -47,7 +47,13 @@
                         <li class="sidebar-item {{ Request::is('pemesanan') ? 'active' : '' }}  ">
                             <a href="/pemesanan" class='sidebar-link'>
                                 <i class="bi bi-box"></i>
-                                <span>pemesanan</span>
+                                <span>Pemesanan</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item {{ Request::is('customer') ? 'active' : '' }}  ">
+                            <a href="/customer" class='sidebar-link'>
+                                <i class="bi bi-box"></i>
+                                <span>Customer</span>
                             </a>
                         </li>
                         <li class="sidebar-item  ">
