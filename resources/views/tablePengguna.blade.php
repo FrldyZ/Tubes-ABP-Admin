@@ -1,6 +1,6 @@
 @extends('layouts/main');
 @section('heading')
-<h3>User Table</h3>
+<h3>Daftar Pengguna</h3>
 @endsection
 
 @section('content')
@@ -16,6 +16,7 @@
             <th>Username</th>
             <th>Nama</th>
             <th>Telepon</th>
+            <th>Password</th>
           </tr>
             @php $no=0; @endphp
             @foreach($data_pengguna as $item)
@@ -25,6 +26,7 @@
                 <td>{{$item['username']}}</td>
                 <td>{{$item['nama']}}</td>
                 <td>{{$item['telepon']}}</td>
+                <td>{{$item['password']}}</td>
               </tr>
             @endforeach
         </table>
