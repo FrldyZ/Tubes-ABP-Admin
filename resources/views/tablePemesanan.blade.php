@@ -25,7 +25,12 @@
     border: 1px solid lightgrey;
     border-radius: 3px;
   }
-  
+  .subcontainer {
+    background-color: #fc0000;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
   span.price {
     float: right;
     color: grey;
@@ -39,6 +44,19 @@
       margin-bottom: 20px;
     }
   }
+  table, th, td {
+      border: 1px solid black;
+      border-collapse: separate;
+    }
+    table {
+      width: 100%;
+
+    }
+
+    table.center {
+      margin-left: auto; 
+      margin-right: auto;
+    }
   </style>
   
   <body>
@@ -51,10 +69,26 @@
               <b>4</b>
             </span>
           </h4>
-          <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-          <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-          <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-          <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+          <table class="center">
+            <thead>
+              <tr>
+                <th scope="col">ID Pemesana</th>
+                <th scope="col">Nama Barang</th>
+                <th scope="col">Harga</th>
+                <th scope="col">Status Pemesanan</th>
+                <th scope="col">Status Pembayaran</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-bold-500">ID</td>
+                <td class="text-bold-500">nambar</td>
+                <td class="text-bold-500">harga</td>
+                <td><div class="subcontainer">status</div></td>
+                <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Status Pembayaran</button></a></td>
+              </tr>
+            </tbody>
+          </table>
           <hr>
           <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
         </div>
