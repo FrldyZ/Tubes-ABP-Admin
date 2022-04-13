@@ -72,7 +72,7 @@
           <table class="center">
             <thead>
               <tr>
-                <th scope="col">ID Pemesana</th>
+                <th scope="col">ID Pemesanan</th>
                 <th scope="col">Nama Barang</th>
                 <th scope="col">Harga</th>
                 <th scope="col">Status Pemesanan</th>
