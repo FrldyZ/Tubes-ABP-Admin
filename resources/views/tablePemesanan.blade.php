@@ -44,19 +44,20 @@
       margin-bottom: 20px;
     }
   }
+
   table, th, td {
       border: 1px solid black;
       border-collapse: separate;
-    }
-    table {
-      width: 100%;
+  }
+  table {
+    width: 100%;
 
-    }
+  }
 
-    table.center {
-      margin-left: auto; 
-      margin-right: auto;
-    }
+  table.center {
+    margin-left: auto; 
+    margin-right: auto;
+  }
   </style>
   
   <body>
@@ -84,8 +85,8 @@
                 <td class="text-bold-500">ID</td>
                 <td class="text-bold-500">nambar</td>
                 <td class="text-bold-500">harga</td>
-                <td><div class="subcontainer">status</div></td>
-                <td><a href="form.html" scope="row"><button type="button" class="btn btn-primary">Status Pembayaran</button></a></td>
+                <td><a scope="row"><button type="button" class="btn btn-danger">Status Pesanan</button></a></td>
+                <td><a scope="row"><button type="button" class="btn btn-primary">Status Pembayaran</button></a></td>
               </tr>
             </tbody>
           </table>
