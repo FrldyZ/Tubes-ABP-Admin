@@ -36,7 +36,7 @@
                                 <label>Gambar</label>
                                 <div class="form-group">
                                     <img class="img-preview img-fluid mb-3 col-sm-3">
-                                    <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" onchange="previewGambar()" required>
+                                    <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" onchange="previewGambar('')" required>
                                     @error('gambar')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -142,12 +142,12 @@
                                                 @csrf
                                                 <label>Nama: </label>
                                                 <div class="form-group">
-                                                    <label>{{$oleh->nama}}</label>
+                                                    <input type="text" placeholder="Nama Oleh-Oleh" class="form-control" name="nama" value="{{$oleh->nama}}" disabled>
                                                 </div>
                                                 <label>Gambar:</label>
                                                 <div class="form-group">
-                                                    <img src="{{ asset('storage/'.$oleh->gambar) }}" class="img-preview img-fluid mb-3 col-sm-3">
-                                                    <input class="form-control" type="file" id="gambar" name="gambar" onchange="previewGambar()">
+                                                    <img src="{{ asset('storage/'.$oleh->gambar) }}" class="{{'img-preview'.$oleh->id}} img-fluid mb-3 col-sm-3">
+                                                    <input class="form-control" type="file" id="{{'gambar'.$oleh->id}}" name="gambar" onchange="previewGambar('{{$oleh->id}}')">
                                                 </div>
                                                 <label>Deskripsi: </label>
                                                 <div class="form-group">
@@ -211,9 +211,9 @@
 @endsection
 @section('script')
 <script>
-    function previewGambar() {
-        const gambar = document.querySelector('#gambar');
-        const previewGambar = document.querySelector('.img-preview');
+    function previewGambar(id) {
+        const gambar = document.querySelector('#gambar'.concat(id));
+        const previewGambar = document.querySelector('.img-preview'.concat(id));
 
         previewGambar.style.display = 'block';
 
