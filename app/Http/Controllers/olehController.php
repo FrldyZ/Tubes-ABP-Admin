@@ -61,6 +61,9 @@ class olehController extends Controller
     }
 
     public function delete($id){
-        
+        $oleh = oleh::find($id);
+        Storage::delete($oleh->gambar);
+        $oleh->delete();
+        return redirect('/oleh')->with('Success', 'Data oleh-oleh telah berhasil dihapus');
     }
 }

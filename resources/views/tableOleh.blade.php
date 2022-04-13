@@ -171,32 +171,35 @@
 
                             <!-- delete -->
                             <!-- button -->
-                            <a class="badge bg-danger" data-bs-toggle="modal" data-bs-target="#deleteOleh"><i data-feather="x-circle"></i></a>
+                            <a class="badge bg-danger" data-bs-toggle="modal" data-bs-target="{{ '#deleteOleh'.$oleh->id }}"><i data-feather="x-circle"></i></a>
                             <!-- modal -->
-                            <div class="modal fade text-left" id="deleteOleh" tabindex="-1" role="dialog" aria-labelledby="deleteOlehLabel" aria-hidden="true">
+                            <div class="modal fade text-left" id="{{ 'deleteOleh'.$oleh->id }}" tabindex="-1" role="dialog" aria-labelledby="{{ 'deleteOlehLabel'.$oleh->id }}" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="deleteOlehLabel">Hapus</h5>
+                                            <h5 class="modal-title" id="{{ 'deleteOlehLabel'.$oleh->id }}">Hapus</h5>
                                             <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
                                                 <i data-feather="x"></i>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <p>
-                                                Hapus $nama?
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                                                <i class="bx bx-x d-block d-sm-none"></i>
-                                                <span class="d-none d-sm-block">Close</span>
-                                            </button>
-                                            <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                                                <i class="bx bx-check d-block d-sm-none"></i>
-                                                <span class="d-none d-sm-block">Iya</span>
-                                            </button>
-                                        </div>
+                                        <form action="/oleh/delete/{{ $oleh->id }}" method="post">
+                                            @csrf
+                                            <div class="modal-body">
+                                                <p>
+                                                    Hapus {{$oleh->nama}}?
+                                                </p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                                    <span class="d-none d-sm-block">Close</span>
+                                                </button>
+                                                <button class="btn btn-primary ml-1">
+                                                    <i class="bx bx-check d-block d-sm-none"></i>
+                                                    <span class="d-none d-sm-block">Iya</span>
+                                                </button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
