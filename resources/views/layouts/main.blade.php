@@ -50,10 +50,10 @@
                                 <span>Pemesanan</span>
                             </a>
                         </li>
-                        <li class="sidebar-item {{ Request::is('customer') ? 'active' : '' }}  ">
-                            <a href="/customer" class='sidebar-link'>
+                        <li class="sidebar-item {{ Request::is('pengguna') ? 'active' : '' }}  ">
+                            <a href="/pengguna" class='sidebar-link'>
                                 <i class="bi bi-box"></i>
-                                <span>Customer</span>
+                                <span>Pengguna</span>
                             </a>
                         </li>
                         <li class="sidebar-item  ">
