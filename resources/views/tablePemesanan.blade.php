@@ -76,8 +76,6 @@
                 <th scope="col">ID Pemesanan</th>
                 <th scope="col">Nama Barang</th>
                 <th scope="col">Harga</th>
-                <th scope="col">Status Pemesanan</th>
-                <th scope="col">Status Pembayaran</th>
               </tr>
             </thead>
             <tbody>
@@ -85,8 +83,6 @@
                 <td class="text-bold-500">ID</td>
                 <td class="text-bold-500">nambar</td>
                 <td class="text-bold-500">harga</td>
-                <td><a scope="row"><button type="button" class="btn btn-danger">Status Pesanan</button></a></td>
-                <td><a scope="row"><button type="button" class="btn btn-primary">Status Pembayaran</button></a></td>
               </tr>
             </tbody>
           </table>
