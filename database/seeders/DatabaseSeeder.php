@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\oleh;
 use App\Models\admin;
+use App\Models\pesanan;
 use App\Models\pengguna;
+use App\Models\transaksi;
 use App\Models\pembayaran;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -108,9 +110,14 @@ class DatabaseSeeder extends Seeder
         $oleh->terjual = 0;
         $oleh->save();
 
-        //pemesanan
+        //transaksi
+        // $transaksi = new transaksi();
+        // $transaksi->save();
 
-        //pembayaran
+        //pesanan
+        // $pesanan= new pesanan();
+        // $pesanan->save();
+
 
     }
 }
