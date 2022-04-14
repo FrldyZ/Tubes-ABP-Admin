@@ -73,9 +73,9 @@
           <table class="center">
             <thead>
               <tr>
-                <th scope="col">ID Pemesanan</th>
-                <th scope="col">Nama Barang</th>
-                <th scope="col">Harga</th>
+                <th scope="col" style=" width: 50%;">ID Pemesanan</th>
+                <th scope="col" style=" width: 25%;">Nama Barang</th>
+                <th scope="col" style=" width: 25%;">Harga</th>
               </tr>
             </thead>
             <tbody>

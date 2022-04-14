@@ -66,15 +66,17 @@
                 <th scope="col">Tanggal Pemesanan</th>
                 <th scope="col">Tanggal Pembayaran</th>
                 <th scope="col">Total Harga</th>
+                <th scope="col">Detai Pesanan</th>
                 <th scope="col">Status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="text-bold-500"><a href="/pemesanan">tgl pemesanan</a></td>
-                <td class="text-bold-500">tgl pembayaran</td>
-                <td class="text-bold-500">Total Harga</td>
-                <td><a scope="row"><button type="button" class="btn btn-danger">Status</button></a></td>
+                <td class="text-bold-500" style=" width: 20%;">tgl pemesanan</td>
+                <td class="text-bold-500" style=" width: 20%;">tgl pembayaran</td>
+                <td class="text-bold-500" style=" width: 20%;">Total Harga</td>
+                <td class="text-bold-500" style=" width: 20%;"><a href="/pemesanan">Detail Pesanan</a></td>
+                <td><a scope="row" style=" width: 20%;"><button type="button" class="btn btn-danger">Status</button></a></td>
               </tr>
             </tbody>
           </table>

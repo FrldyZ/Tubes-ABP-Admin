@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.svg')}}" type="image/x-icon">
 </head>
-
 <body>
     <div id="app">
         <div id="sidebar" class="active">
