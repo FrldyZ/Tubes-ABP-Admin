@@ -7,7 +7,6 @@ use App\Models\admin;
 use App\Models\pesanan;
 use App\Models\pengguna;
 use App\Models\transaksi;
-use App\Models\pembayaran;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -23,7 +22,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        //admin
+        // admin
         $admin = new admin();
         $admin->email = 'kevin@mail.com';
         $admin->username = 'kevin';
@@ -42,7 +41,7 @@ class DatabaseSeeder extends Seeder
         $admin->password = Hash::make('45678');
         $admin->save();
 
-        //pengguna
+        // pengguna
         $pengguna = new pengguna();
         $pengguna->username = 'eschreck';
         $pengguna->nama = 'esch reck';
@@ -85,7 +84,7 @@ class DatabaseSeeder extends Seeder
         $pengguna->password = Hash::make('clcvu');
         $pengguna->save();
 
-        //oleh
+        // oleh
         $oleh = new oleh();
         $oleh->nama = 'Bakpia';
         $oleh->gambar = 'gambarOleh/hz3HEw6GbQxA0iv4I2tjJjQ5Vd84BuzCL8u63XBV.png';
@@ -110,11 +109,15 @@ class DatabaseSeeder extends Seeder
         $oleh->terjual = 0;
         $oleh->save();
 
-        //transaksi
+        // transaksi
         // $transaksi = new transaksi();
+        // $transaksi->username_pengguna = 'eschreck';
+        // $transaksi->tanggal_pemesanan = '';
+        // $transaksi->tanggal_pembayaran = '';
+        // $transaksi->status='belum dibayar';
         // $transaksi->save();
 
-        //pesanan
+        // pesanan
         // $pesanan= new pesanan();
         // $pesanan->save();
 
