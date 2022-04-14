@@ -13,12 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pembayaran', function (Blueprint $table) {
+        Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('total_harga');
+            $table->date('tanggal_dipesan');
+            $table->date('tanggal_dibayar');
             $table->string('status');
-            // $table->bigInteger('id_pemesanan')->unsigned();
-            // $table->foreign('id_pemesanan')->references('id')->on('pemesanan');
+            // foreign key: pengguna
+            $table->string('username_pengguna',100);
+            $table->foreign('username_pengguna')->references('username')->on('pengguna');
             $table->timestamps();
         });
     }
