@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\pemesananController;
 use App\Http\Controllers\penggunaController;
+use App\Http\Controllers\transaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,7 @@ Route::post('/oleh/delete/{id}', [olehController::class,'delete'])->middleware('
 
 Route::get('/pemesanan', [pemesananController::class,'index'])->middleware('auth:admin');
 Route::get('/pengguna', [penggunaController::class,'index'])->middleware('auth:admin');
-
+Route::get('/transaksi', [transaksiController::class,'index'])->middleware('auth:admin');
 
 // Route::get('/auth-forgot-password.html', function (){
 //     return view('auth-forgot-password');

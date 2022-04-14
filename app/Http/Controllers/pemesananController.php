@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pemesanan;
+use App\Models\pesanan;
 use Illuminate\Http\Request;
 
 class pemesananController extends Controller
@@ -10,7 +10,7 @@ class pemesananController extends Controller
     public function index(){
         return view('tablePemesanan',[
             'title'=> 'Pemesanan',
-            'pemesanan' => pemesanan::all()
+            'pemesanan' => pesanan::all()
         ]);
     }
 }

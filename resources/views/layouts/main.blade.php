@@ -56,6 +56,12 @@
                                 <span>Pengguna</span>
                             </a>
                         </li>
+                        <li class="sidebar-item {{ Request::is('transaksi') ? 'active' : '' }}  ">
+                            <a href="/transaksi" class='sidebar-link'>
+                                <i class="bi bi-box"></i>
+                                <span>Transaksi</span>
+                            </a>
+                        </li>
                         <li class="sidebar-item  ">
                             <a href="/logout" class='sidebar-link'>
                                 <i class="bi bi-box-arrow-right"></i>
