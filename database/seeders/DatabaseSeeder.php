@@ -147,22 +147,38 @@ class DatabaseSeeder extends Seeder
 
         // pesanan
         $pesanan= new pesanan();
-        $pesanan->jumlah_item = ;
-        $pesanan->tanggal_pemesanan = ;
+        $pesanan->jumlah_item = 3;
+        $pesanan->tanggal_pemesanan = '15-04-2022';
         $pesanan->id_oleh = 1;
         $pesanan->id_transaksi = 1;
         $pesanan->save();
 
         $pesanan= new pesanan();
+        $pesanan->jumlah_item = 5;
+        $pesanan->tanggal_pemesanan = '16-04-2022';
+        $pesanan->id_oleh = 2;
+        $pesanan->id_transaksi = 2;
         $pesanan->save();
 
         $pesanan= new pesanan();
+        $pesanan->jumlah_item = 7;
+        $pesanan->tanggal_pemesanan = '23-04-2022';
+        $pesanan->id_oleh = 2;
+        $pesanan->id_transaksi = 3;
+        $pesanan->save();
+        
+        $pesanan= new pesanan();
+        $pesanan->jumlah_item = 10;
+        $pesanan->tanggal_pemesanan = '10-05-2022';
+        $pesanan->id_oleh = 1;
+        $pesanan->id_transaksi = 4;
         $pesanan->save();
 
         $pesanan= new pesanan();
-        $pesanan->save();
-
-        $pesanan= new pesanan();
+        $pesanan->jumlah_item = 8;
+        $pesanan->tanggal_pemesanan = '17-05-2022';;
+        $pesanan->id_oleh = 3;
+        $pesanan->id_transaksi = 5;
         $pesanan->save();
 
     }
