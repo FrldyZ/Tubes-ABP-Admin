@@ -158,6 +158,10 @@
                                                     <div class="form-group">
                                                         <input type="text" placeholder="Nama Oleh-Oleh" class="form-control" name="nama" value="{{$oleh->nama}}" disabled>
                                                     </div>
+                                                    <label>Harga: </label>
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="ex: 5000, 10000, 20000" class="form-control" name="harga" value="{{$oleh->harga}}" required>
+                                                    </div>
                                                     <label>Gambar:</label>
                                                     <div class="form-group">
                                                         <img src="{{ asset('storage/'.$oleh->gambar) }}" class="{{'img-preview'.$oleh->id}} img-fluid mb-3 col-sm-3">

@@ -19,12 +19,14 @@ class olehController extends Controller
 
         $request->validate([
             'nama'=>'required|unique:oleh|max:255',
+            'harga'=>'required|numeric|min:3|max:6',
             'gambar'=>'required|image|file|max:512',
             'deskripsi'=>'required|max:255'
         ]);
 
         $oleh = new oleh();
         $oleh->nama = $request->nama;
+        $oleh->harga = $request->harga;
         $oleh->gambar = $request->file('gambar')->store('gambarOleh');
         $oleh->deskripsi = $request->deskripsi;
         $oleh->terjual = 0;
@@ -37,6 +39,7 @@ class olehController extends Controller
     public function edit(Request $request, $id){
         $request->validate([
             'gambar'=>'image|file|max:512',
+            'harga'=>'required|numeric|min:3|max:6',
             'deskripsi'=>'max:255'
         ]);
 
