@@ -83,15 +83,17 @@
             <table class="table table-bordered mb-0">
                 <thead>
                     <tr>
-                        <th>NAMA</th>
-                        <th>TERJUAL</th>
-                        <th>ACTION</th>
+                        <th>Nama</th>
+                        <th>Harga (Rp)</th>
+                        <th>Terjual</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($olehs as $oleh)
                     <tr>
                         <td class="text-bold-500">{{$oleh->nama}}</td>
+                        <td class="text-bold-500">{{$oleh->harga}}</td>
                         <td class="text-bold-500">{{$oleh->terjual}}</td>
                         <td>
                             <!-- View -->

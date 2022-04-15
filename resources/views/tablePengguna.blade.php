@@ -5,31 +5,29 @@
 
 @section('content')
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="card">
-      <div class="card-header">DATA PENGGUNA</div>
-
-      <div class="card-body">
-        <table class="table table-striped">
-          <tr>
-            <th>NO</th>
-            <th>Username</th>
-            <th>Nama</th>
-            <th>Telepon</th>
-          </tr>
-            @php $no=0; @endphp
-            @foreach($data_pengguna as $item)
-            @php $no++; @endphp
-              <tr>
-                <td>{{$no}}</td>
-                <td>{{$item['username']}}</td>
-                <td>{{$item['nama']}}</td>
-                <td>{{$item['telepon']}}</td>
-              </tr>
-            @endforeachphp
-        </table>
-      </div>
+    <div class="row justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tr>
+                        <th>NO</th>
+                        <th>Username</th>
+                        <th>Nama</th>
+                        <th>Telepon</th>
+                    </tr>
+                    @php $no=0; @endphp
+                    @foreach($data_pengguna as $item)
+                    @php $no++; @endphp
+                    <tr>
+                        <td>{{$no}}</td>
+                        <td>{{$item['username']}}</td>
+                        <td>{{$item['nama']}}</td>
+                        <td>{{$item['telepon']}}</td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 @endsection

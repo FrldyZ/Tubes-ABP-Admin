@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.svg')}}" type="image/x-icon">
 </head>
+
 <body>
     <div id="app">
         <div id="sidebar" class="active">
@@ -55,7 +56,27 @@
                                 <span>Transaksi</span>
                             </a>
                         </li>
-                        <li class="sidebar-item  ">
+                        <li class="sidebar-item {{ Request::is('transaksi') ? 'active' : '' }} has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Transaksi</span>
+                            </a>
+                            <ul class="submenu {{ Request::is('transaksi/*') ? 'active' : '' }}">
+                                <li class="submenu-item {{ Request::is('transaksi/batal') ? 'active' : '' }}">
+                                    <a href="component-alert.html">Batal</a>
+                                </li>
+                                <li class="submenu-item {{ Request::is('transaksi/belum_bayar') ? 'active' : '' }}">
+                                    <a href="component-badge.html">Belum Dibayar</a>
+                                </li>
+                                <li class="submenu-item {{ Request::is('transaksi/sudah_bayar') ? 'active' : '' }}">
+                                    <a href="component-breadcrumb.html">Belum Diambil</a>
+                                </li>
+                                <li class="submenu-item {{ Request::is('transaksi/sudah_ambil') ? 'active' : '' }}">
+                                    <a href="component-button.html">Sudah Diambil</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
                             <a href="/logout" class='sidebar-link'>
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Log Out</span>
