@@ -110,17 +110,56 @@ class DatabaseSeeder extends Seeder
         $oleh->save();
 
         // transaksi
-        // $transaksi = new transaksi();
-        // $transaksi->username_pengguna = 'eschreck';
-        // $transaksi->tanggal_pemesanan = '';
-        // $transaksi->tanggal_pembayaran = '';
-        // $transaksi->status='belum dibayar';
-        // $transaksi->save();
+        $transaksi = new transaksi();
+        $transaksi->username_pengguna = 'Henry';
+        $transaksi->tanggal_pemesanan = '15-04-2022';
+        $transaksi->tanggal_pembayaran = '15-04-2022';
+        $transaksi->status='belum dibayar';
+        $transaksi->save();
+
+        $transaksi = new transaksi();
+        $transaksi->username_pengguna = 'Marley';
+        $transaksi->tanggal_pemesanan = '16-04-2022';
+        $transaksi->tanggal_pembayaran = '16-04-2022';
+        $transaksi->status='belum dibayar';
+        $transaksi->save();
+
+        $transaksi = new transaksi();
+        $transaksi->username_pengguna = 'Batman';
+        $transaksi->tanggal_pemesanan = '23-04-2022';
+        $transaksi->tanggal_pembayaran = '23-04-2022';
+        $transaksi->status='belum dibayar';
+        $transaksi->save();
+
+        $transaksi = new transaksi();
+        $transaksi->username_pengguna = 'Alfred';
+        $transaksi->tanggal_pemesanan = '10-05-2022';
+        $transaksi->tanggal_pembayaran = '10-05-2022';
+        $transaksi->status='belum dibayar';
+        $transaksi->save();
+
+        $transaksi = new transaksi();
+        $transaksi->username_pengguna = 'Octane';
+        $transaksi->tanggal_pemesanan = '17-05-2022';
+        $transaksi->tanggal_pembayaran = '17-05-2022';
+        $transaksi->status='belum dibayar';
+        $transaksi->save();
 
         // pesanan
-        // $pesanan= new pesanan();
-        // $pesanan->save();
+        $pesanan= new pesanan();
+        $pesanan->save();
 
+        $pesanan= new pesanan();
+        $pesanan->save();
+
+        $pesanan= new pesanan();
+        $pesanan->save();
+
+        $pesanan= new pesanan();
+        $pesanan->save();
+
+        $pesanan= new pesanan();
+        $pesanan->save();
 
     }
 }
