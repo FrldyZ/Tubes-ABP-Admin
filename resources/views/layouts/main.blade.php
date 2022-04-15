@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="logo">
-                    <a href="/dashboard"><img src="assets/images/logo/logo.png" alt="Logo" srcset="" width="100" height="100"></a>
+                    <a href="/dashboard"><img src="assets/images/logo/logo.png" alt="Logo" srcset="" width="300" height="300"></a>
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
