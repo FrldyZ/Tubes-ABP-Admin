@@ -147,6 +147,10 @@ class DatabaseSeeder extends Seeder
 
         // pesanan
         $pesanan= new pesanan();
+        $pesanan->jumlah_item = ;
+        $pesanan->tanggal_pemesanan = ;
+        $pesanan->id_oleh = 1;
+        $pesanan->id_transaksi = 1;
         $pesanan->save();
 
         $pesanan= new pesanan();
