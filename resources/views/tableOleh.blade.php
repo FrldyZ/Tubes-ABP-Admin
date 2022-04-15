@@ -9,11 +9,11 @@
     <div class="card-content mx-3 my-3">
         <div class="table-responsive">
             <!-- button -->
-            <a class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahOleh">Tambah</a>
+            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahOleh">Tambah</button>
 
             <!-- modal -->
             <div class="modal fade text-left" id="tambahOleh" tabindex="-1" role="dialog" aria-labelledby="tambahOlehLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title" id="tambahOlehLabel">Tambah Oleh </h4>
@@ -21,49 +21,60 @@
                                 <i data-feather="x"></i>
                             </button>
                         </div>
-                        <form action="/oleh/tambah" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div class="modal-body">
-                                <label>Nama: </label>
-                                <div class="form-group">
-                                    <input type="text" placeholder="Nama Oleh-Oleh" class="form-control @error('nama') is-invalid @enderror" name="nama" required>
-                                    @error('nama')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
+                        <div class="modal-body">
+                            <form action="/oleh/tambah" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <div class="modal-body">
+                                    <label>Nama: </label>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Nama Oleh-Oleh" class="form-control @error('nama') is-invalid @enderror" name="nama" required>
+                                        @error('nama')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
-                                    @enderror
-                                </div>
-                                <label>Gambar</label>
-                                <div class="form-group">
-                                    <img class="img-preview img-fluid mb-3 col-sm-3">
-                                    <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" onchange="previewGambar('')" required>
-                                    @error('gambar')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
+                                    <label>Harga: </label>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="ex: 5000, 10000, 20000" class="form-control @error('harga') is-invalid @enderror" name="harga" required>
+                                        @error('harga')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
-                                    @enderror
-                                </div>
-                                <label>Deskripsi: </label>
-                                <div class="form-group">
-                                    <textarea rows="3" class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" required></textarea>
-                                    @error('deskripsi')
-                                    <div class="invalid-feedback">
-                                        {{ $message }}
+                                    <label>Gambar</label>
+                                    <div class="form-group">
+                                        <img class="img-preview img-fluid mb-3 col-sm-3">
+                                        <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" onchange="previewGambar('')" required>
+                                        @error('gambar')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
-                                    @enderror
+                                    <label>Deskripsi: </label>
+                                    <div class="form-group">
+                                        <textarea rows="3" class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" required></textarea>
+                                        @error('deskripsi')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                                    <i class="bx bx-x d-block d-sm-none"></i>
-                                    <span class="d-none d-sm-block">Close</span>
-                                </button>
-                                <button class="btn btn-primary ml-1">
-                                    <i class="bx bx-check d-block d-sm-none"></i>
-                                    <span class="d-none d-sm-block">Simpan</span>
-                                </button>
-                            </div>
-                        </form>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                        <span class="d-none d-sm-block">Close</span>
+                                    </button>
+                                    <button class="btn btn-primary ml-1">
+                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                        <span class="d-none d-sm-block">Simpan</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -72,13 +83,13 @@
             <div class="alert alert-success" role="alert">{{ session('Success') }}</div>
             @endif
             @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
             <table class="table table-bordered mb-0">
                 <thead>
@@ -131,7 +142,7 @@
                             <a class="badge bg-warning" data-bs-toggle="modal" data-bs-target="{{ '#editOleh'.$oleh->id }}"><i data-feather="edit"></i></a>
                             <!-- modal -->
                             <div class="modal fade text-left" id="{{ 'editOleh'.$oleh->id }}" tabindex="-1" role="dialog" aria-labelledby="{{ 'editOlehLabel'.$oleh->id }}" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h4 class="modal-title" id="{{ 'editOlehLabel'.$oleh->id }}">Edit</h4>
@@ -139,34 +150,36 @@
                                                 <i data-feather="x"></i>
                                             </button>
                                         </div>
-                                        <form action="/oleh/edit/{{ $oleh->id }}" method="post" enctype="multipart/form-data">
-                                            <div class="modal-body">
-                                                @csrf
-                                                <label>Nama: </label>
-                                                <div class="form-group">
-                                                    <input type="text" placeholder="Nama Oleh-Oleh" class="form-control" name="nama" value="{{$oleh->nama}}" disabled>
+                                        <div class="modal-body">
+                                            <form action="/oleh/edit/{{ $oleh->id }}" method="post" enctype="multipart/form-data">
+                                                <div class="modal-body">
+                                                    @csrf
+                                                    <label>Nama: </label>
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Nama Oleh-Oleh" class="form-control" name="nama" value="{{$oleh->nama}}" disabled>
+                                                    </div>
+                                                    <label>Gambar:</label>
+                                                    <div class="form-group">
+                                                        <img src="{{ asset('storage/'.$oleh->gambar) }}" class="{{'img-preview'.$oleh->id}} img-fluid mb-3 col-sm-3">
+                                                        <input class="form-control" type="file" id="{{'gambar'.$oleh->id}}" name="gambar" onchange="previewGambar('{{$oleh->id}}')">
+                                                    </div>
+                                                    <label>Deskripsi: </label>
+                                                    <div class="form-group">
+                                                        <textarea rows="3" class="form-control" name="deskripsi">{{$oleh->deskripsi}}</textarea>
+                                                    </div>
                                                 </div>
-                                                <label>Gambar:</label>
-                                                <div class="form-group">
-                                                    <img src="{{ asset('storage/'.$oleh->gambar) }}" class="{{'img-preview'.$oleh->id}} img-fluid mb-3 col-sm-3">
-                                                    <input class="form-control" type="file" id="{{'gambar'.$oleh->id}}" name="gambar" onchange="previewGambar('{{$oleh->id}}')">
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Close</span>
+                                                    </button>
+                                                    <button class="btn btn-primary ml-1">
+                                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                                        <span class="d-none d-sm-block">Simpan</span>
+                                                    </button>
                                                 </div>
-                                                <label>Deskripsi: </label>
-                                                <div class="form-group">
-                                                    <textarea rows="3" class="form-control" name="deskripsi">{{$oleh->deskripsi}}</textarea>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                                                    <i class="bx bx-x d-block d-sm-none"></i>
-                                                    <span class="d-none d-sm-block">Close</span>
-                                                </button>
-                                                <button class="btn btn-primary ml-1">
-                                                    <i class="bx bx-check d-block d-sm-none"></i>
-                                                    <span class="d-none d-sm-block">Simpan</span>
-                                                </button>
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
