@@ -43,7 +43,7 @@
                                         </div>
                                         @enderror
                                     </div>
-                                    <label>Gambar</label>
+                                    <label>Gambar:</label>
                                     <div class="form-group">
                                         <img class="img-preview img-fluid mb-3 col-sm-3">
                                         <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" onchange="previewGambar('')" required>
