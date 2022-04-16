@@ -70,6 +70,12 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="sidebar-item {{ Request::is('contact') ? 'active' : '' }}  ">
+                            <a href="/contact" class='sidebar-link'>
+                                <i class="bi bi-file-person"></i>
+                                <span>Contact</span>
+                            </a>
+                        </li>
                         <li class="sidebar-item">
                             <a href="/logout" class='sidebar-link'>
                                 <i class="bi bi-box-arrow-right"></i>
