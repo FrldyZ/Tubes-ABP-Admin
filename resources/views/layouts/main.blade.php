@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="logo text-center">
-                    <a href="/dashboard"><img src="{{asset('assets/images/logo/logo.png')}}" alt="Logo" class="mx auto" width="100" height="100"></a>
+                    <a href="/dashboard"><img src="{{asset('assets/images/logo/logo.png')}}" alt="Logo" class="mx auto" width="150" height="150"></a>
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
