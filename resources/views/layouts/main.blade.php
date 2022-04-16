@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/bootstrap-icons/bootstrap-icons.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/simple-datatables/style.css') }}">
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.svg')}}" type="image/x-icon">
 </head>
 
@@ -26,8 +27,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="logo">
-                    <a href="/dashboard"><img src="{{asset('assets/images/logo/logo.png')}}" alt="Logo" srcset="" width="100" height="100"></a>
+                <div class="logo text-center">
+                    <a href="/dashboard"><img src="{{asset('assets/images/logo/logo.png')}}" alt="Logo" class="mx auto" width="100" height="100"></a>
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
@@ -56,9 +57,6 @@
                                 <span>Transaksi</span>
                             </a>
                             <ul class="submenu {{ Request::is('transaksi/*') ? 'active' : '' }}">
-                                <li class="submenu-item {{ Request::is('transaksi/batal*') ? 'active' : '' }}">
-                                    <a href="/transaksi/batal">Batal</a>
-                                </li>
                                 <li class="submenu-item {{ Request::is('transaksi/belum_bayar*') ? 'active' : '' }}">
                                     <a href="/transaksi/belum_bayar">Belum Dibayar</a>
                                 </li>
@@ -67,6 +65,9 @@
                                 </li>
                                 <li class="submenu-item {{ Request::is('transaksi/sudah_ambil*') ? 'active' : '' }}">
                                     <a href="/transaksi/sudah_ambil">Sudah Diambil</a>
+                                </li>
+                                <li class="submenu-item {{ Request::is('transaksi/batal*') ? 'active' : '' }}">
+                                    <a href="/transaksi/batal">Batal</a>
                                 </li>
                             </ul>
                         </li>
@@ -106,9 +107,9 @@
                     <div class="float-start">
                         <p>2022 &copy; Oleh-Shop</p>
                     </div>
-                    <div class="float-end">
+                    <!-- <div class="float-end">
                         <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a href="">Oleh-Shop</a></p>
-                    </div>
+                    </div> -->
                 </div>
             </footer>
         </div>
@@ -122,6 +123,8 @@
     <script src="{{asset('assets/vendors/apexcharts/apexcharts.js')}}"></script>
     <script src="{{asset('assets/js/pages/dashboard.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('assets/vendors/simple-datatables/simple-datatables.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     @yield('script')
 </body>
 

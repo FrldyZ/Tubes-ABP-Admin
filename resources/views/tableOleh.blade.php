@@ -81,6 +81,8 @@
 
             @if (session()->has('Success'))
             <div class="alert alert-success" role="alert">{{ session('Success') }}</div>
+            @elseif (session()->has('Error'))
+            <div class="alert alert-danger"role="alert">{{ session('Error') }}</div>
             @endif
             @if ($errors->any())
             <div class="alert alert-danger">
@@ -165,7 +167,7 @@
                                                     <label>Gambar:</label>
                                                     <div class="form-group">
                                                         <img src="{{ asset('storage/'.$oleh->gambar) }}" class="{{'img-preview'.$oleh->id}} img-fluid mb-3 col-sm-3">
-                                                        <input class="form-control" type="file" id="{{'gambar'.$oleh->id}}" name="gambar" onchange="previewGambar('{{$oleh->id}}')">
+                                                        <input class="form-control" type="file" id="{{'gambar'.$oleh->id}}" value="{{ asset('storage/'.$oleh->gambar) }}" name="gambar" onchange="previewGambar('{{$oleh->id}}')">
                                                     </div>
                                                     <label>Deskripsi: </label>
                                                     <div class="form-group">

@@ -111,72 +111,67 @@ class DatabaseSeeder extends Seeder
 
         // transaksi
         $transaksi = new transaksi();
-        $transaksi->username_pengguna = 'Henry';
+        $transaksi->username_pengguna = 'cliffhanger1988';
         $transaksi->tanggal_pemesanan = '15-04-2022';
-        $transaksi->tanggal_pembayaran = '15-04-2022';
-        $transaksi->status='belum dibayar';
+        //$transaksi->tanggal_pembayaran = '15-04-2022';
+        $transaksi->status='batal';
         $transaksi->save();
 
         $transaksi = new transaksi();
-        $transaksi->username_pengguna = 'Marley';
+        $transaksi->username_pengguna = 'eschreck';
         $transaksi->tanggal_pemesanan = '16-04-2022';
-        $transaksi->tanggal_pembayaran = '16-04-2022';
+        //$transaksi->tanggal_pembayaran = '16-04-2022';
         $transaksi->status='belum dibayar';
         $transaksi->save();
 
         $transaksi = new transaksi();
-        $transaksi->username_pengguna = 'Batman';
+        $transaksi->username_pengguna = 'and117333';
         $transaksi->tanggal_pemesanan = '23-04-2022';
         $transaksi->tanggal_pembayaran = '23-04-2022';
-        $transaksi->status='belum dibayar';
+        $transaksi->status='belum diambil';
         $transaksi->save();
 
         $transaksi = new transaksi();
-        $transaksi->username_pengguna = 'Alfred';
+        $transaksi->username_pengguna = 'katgen';
         $transaksi->tanggal_pemesanan = '10-05-2022';
         $transaksi->tanggal_pembayaran = '10-05-2022';
-        $transaksi->status='belum dibayar';
+        $transaksi->status='sudah diambil';
         $transaksi->save();
 
         $transaksi = new transaksi();
-        $transaksi->username_pengguna = 'Octane';
+        $transaksi->username_pengguna = 'clcvulb';
         $transaksi->tanggal_pemesanan = '17-05-2022';
-        $transaksi->tanggal_pembayaran = '17-05-2022';
+        //$transaksi->tanggal_pembayaran = '17-05-2022';
         $transaksi->status='belum dibayar';
         $transaksi->save();
 
         // pesanan
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 3;
-        $pesanan->tanggal_pemesanan = '15-04-2022';
         $pesanan->id_oleh = 1;
         $pesanan->id_transaksi = 1;
         $pesanan->save();
 
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 5;
-        $pesanan->tanggal_pemesanan = '16-04-2022';
         $pesanan->id_oleh = 2;
         $pesanan->id_transaksi = 2;
         $pesanan->save();
 
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 7;
-        $pesanan->tanggal_pemesanan = '23-04-2022';
         $pesanan->id_oleh = 2;
         $pesanan->id_transaksi = 3;
         $pesanan->save();
         
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 10;
-        $pesanan->tanggal_pemesanan = '10-05-2022';
         $pesanan->id_oleh = 1;
         $pesanan->id_transaksi = 4;
         $pesanan->save();
 
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 8;
-        $pesanan->tanggal_pemesanan = '17-05-2022';;
         $pesanan->id_oleh = 3;
         $pesanan->id_transaksi = 5;
         $pesanan->save();

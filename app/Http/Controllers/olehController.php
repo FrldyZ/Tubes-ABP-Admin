@@ -19,7 +19,7 @@ class olehController extends Controller
 
         $request->validate([
             'nama'=>'required|unique:oleh|max:255',
-            'harga'=>'required|numeric|min:3|max:6',
+            'harga'=>'required|numeric|min:5000|max:1000000',
             'gambar'=>'required|image|file|max:512',
             'deskripsi'=>'required|max:255'
         ]);
@@ -33,33 +33,27 @@ class olehController extends Controller
         $oleh->save();
 
         return redirect('/oleh')->with('Success', 'Data oleh-oleh berhasil ditambahkan');
-        //$request->file('gambar')->store('gambarOleh');
     }
     
     public function edit(Request $request, $id){
         $request->validate([
             'gambar'=>'image|file|max:512',
-            'harga'=>'numeric|min:3|max:6',
+            'harga'=>'integer|min:5000|max:1000000',
             'deskripsi'=>'max:255'
         ]);
 
         $oleh = oleh::find($id);
-        if ($request->gambar == '' && $request->deskripsi == ''){
-            return redirect('/oleh')->with('Success', 'Data '.$oleh->nama.' tidak ada yang diubah');
-        } else if ($request->gambar == ''){
-            $oleh->deskripsi = $request->deskripsi;
-            $oleh->save();
-            return redirect('/oleh')->with('Success', 'Data deskripsi '.$oleh->nama.' telah diubah');
-        } else if ($request->deskripsi == ''){
-            Storage::delete($oleh->gambar);
-            $oleh->gambar = $request->file('gambar')->store('gambarOleh');
-            $oleh->save();
-            return redirect('/oleh')->with('Success', 'Data gambar '.$oleh->nama.' telah diubah');
+        if ($request->harga=='' ||$request->deskripsi == ''){
+            return redirect('/oleh')->with('Error', 'Data '.$oleh->nama.' tidak boleh ada kolom yang kosong');
         } else {
             $oleh->deskripsi = $request->deskripsi;
-            Storage::delete($oleh->gambar);
-            $oleh->gambar = $request->file('gambar')->store('gambarOleh');
-            return redirect('/oleh')->with('Success', 'Data gambar '.$oleh->nama.' telah diubah');
+            $oleh->harga = $request->harga;
+            if ($request->hasFile('gambar')){
+                Storage::delete($oleh->gambar);
+                $oleh->gambar = $request->file('gambar')->store('gambarOleh');
+            }
+            $oleh->save();
+            return redirect('/oleh')->with('Success', 'Data '.$oleh->nama.' berhasil diubah');
         }
     }
 
