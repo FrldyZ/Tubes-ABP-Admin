@@ -4,10 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\olehController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\penggunaController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\pemesananController;
-use App\Http\Controllers\penggunaController;
-use App\Http\Controllers\transaksiController;
+use App\Http\Controllers\transaksi\batalController;
+use App\Http\Controllers\transaksi\belumAmbilController;
+use App\Http\Controllers\transaksi\belumBayarController;
+use App\Http\Controllers\transaksi\sudahAmbilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +41,9 @@ Route::post('/oleh/delete/{id}', [olehController::class,'delete'])->middleware('
 
 Route::get('/pemesanan', [pemesananController::class,'index'])->middleware('auth:admin');
 Route::get('/pengguna', [penggunaController::class,'index'])->middleware('auth:admin');
-Route::get('/transaksi', [transaksiController::class,'index'])->middleware('auth:admin');
 
-// Route::get('/auth-forgot-password.html', function (){
-//     return view('auth-forgot-password');
-// });
+Route::get('/transaksi/batal', [batalController::class,'index'])->middleware('auth:admin');
+Route::get('/transaksi/belum_bayar', [belumBayarController::class,'index'])->middleware('auth:admin');
+Route::get('/transaksi/belum_ambil', [belumAmbilController::class,'index'])->middleware('auth:admin');
+Route::get('/transaksi/sudah_ambil', [sudahAmbilController::class,'index'])->middleware('auth:admin');
+

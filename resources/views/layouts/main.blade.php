@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="logo">
-                    <a href="/dashboard"><img src="assets/images/logo/logo.png" alt="Logo" srcset="" width="300" height="300"></a>
+                    <a href="/dashboard"><img src="{{asset('assets/images/logo/logo.png')}}" alt="Logo" srcset="" width="100" height="100"></a>
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
@@ -46,33 +46,27 @@
                         </li>
                         <li class="sidebar-item {{ Request::is('pengguna') ? 'active' : '' }}  ">
                             <a href="/pengguna" class='sidebar-link'>
-                                <i class="bi bi-box"></i>
+                                <i class="bi bi-file-person"></i>
                                 <span>Pengguna</span>
                             </a>
                         </li>
-                        <li class="sidebar-item {{ Request::is('transaksi') ? 'active' : '' }}  ">
-                            <a href="/transaksi" class='sidebar-link'>
-                                <i class="bi bi-box"></i>
-                                <span>Transaksi</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item {{ Request::is('transaksi') ? 'active' : '' }} has-sub">
+                        <li class="sidebar-item {{ Request::is('transaksi/*') ? 'active' : '' }} has-sub">
                             <a href="#" class='sidebar-link'>
-                                <i class="bi bi-stack"></i>
+                                <i class="bi bi-receipt"></i>
                                 <span>Transaksi</span>
                             </a>
                             <ul class="submenu {{ Request::is('transaksi/*') ? 'active' : '' }}">
-                                <li class="submenu-item {{ Request::is('transaksi/batal') ? 'active' : '' }}">
-                                    <a href="component-alert.html">Batal</a>
+                                <li class="submenu-item {{ Request::is('transaksi/batal*') ? 'active' : '' }}">
+                                    <a href="/transaksi/batal">Batal</a>
                                 </li>
-                                <li class="submenu-item {{ Request::is('transaksi/belum_bayar') ? 'active' : '' }}">
-                                    <a href="component-badge.html">Belum Dibayar</a>
+                                <li class="submenu-item {{ Request::is('transaksi/belum_bayar*') ? 'active' : '' }}">
+                                    <a href="/transaksi/belum_bayar">Belum Dibayar</a>
                                 </li>
-                                <li class="submenu-item {{ Request::is('transaksi/sudah_bayar') ? 'active' : '' }}">
-                                    <a href="component-breadcrumb.html">Belum Diambil</a>
+                                <li class="submenu-item {{ Request::is('transaksi/belum_ambil*') ? 'active' : '' }}">
+                                    <a href="/transaksi/belum_ambil">Belum Diambil</a>
                                 </li>
-                                <li class="submenu-item {{ Request::is('transaksi/sudah_ambil') ? 'active' : '' }}">
-                                    <a href="component-button.html">Sudah Diambil</a>
+                                <li class="submenu-item {{ Request::is('transaksi/sudah_ambil*') ? 'active' : '' }}">
+                                    <a href="/transaksi/sudah_ambil">Sudah Diambil</a>
                                 </li>
                             </ul>
                         </li>
