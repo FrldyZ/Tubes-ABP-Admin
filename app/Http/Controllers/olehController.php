@@ -39,7 +39,7 @@ class olehController extends Controller
     public function edit(Request $request, $id){
         $request->validate([
             'gambar'=>'image|file|max:512',
-            'harga'=>'required|numeric|min:3|max:6',
+            'harga'=>'numeric|min:3|max:6',
             'deskripsi'=>'max:255'
         ]);
 
