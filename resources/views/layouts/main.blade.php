@@ -48,7 +48,13 @@
                         <li class="sidebar-item {{ Request::is('pengguna') ? 'active' : '' }}  ">
                             <a href="/pengguna" class='sidebar-link'>
                                 <i class="iconly-boldProfile"></i>
-                                <span>Pengguna</span>
+                                <span>Daftar Pengguna</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item {{ Request::is('admin') ? 'active' : '' }}  ">
+                            <a href="/admin" class='sidebar-link'>
+                                <i class="iconly-boldProfile"></i>
+                                <span>Daftar Admin</span>
                             </a>
                         </li>
                         <li class="sidebar-item {{ Request::is('transaksi/*') ? 'active' : '' }} has-sub">
