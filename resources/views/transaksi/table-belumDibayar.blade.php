@@ -6,6 +6,9 @@
 @section('content')
 <div class="card">
     <div class="card-body">
+        @if (session()->has('Success'))
+            <div class="alert alert-success" role="alert">{{ session('Success') }}</div>
+        @endif
         <table class="table table-striped" id="table1">
             <thead>
                 <tr>
@@ -23,7 +26,40 @@
                     <td>{{ $transaksi->tanggal_dipesan }}</td>
                     <td>{{ $transaksi->total_harga }}</td>
                     <td><a href="/transaksi/belum_bayar/{{ $transaksi->id }}/view">Detail</a></td>
-                    <td></td>
+                    <td>
+                        <a class="badge bg-success" data-bs-toggle="modal" data-bs-target="{{ '#konfirmasi'.$transaksi->id }}"><i data-feather="check-circle"></i></a>
+                        <a class="badge bg-success" data-bs-toggle="modal" data-bs-target="{{ '#konfirmasi'.$transaksi->id }}"><i data-feather="check-circle"></i></a>
+                    </td>
+                    <div class="modal fade text-left" id="{{ 'konfirmasi'.$transaksi->id }}" tabindex="-1" role="dialog" aria-labelledby="{{ 'konfirmasiLabel'.$transaksi->id }}" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="{{ 'konfirmasiLabel'.$transaksi->id }}">Konfirmasi Pengambilan</h5>
+                                    <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
+                                        <i data-feather="x"></i>
+                                    </button>
+                                </div>
+                                <form action="/transaksi/belum_bayar/{{ $transaksi->id }}/konfirmasi" method="post">
+                                    @csrf
+                                    <div class="modal-body">
+                                        <p>
+                                            Konfirmasi pengambilan pemesanan ID: {{$transaksi->id}}?
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                            <i class="bx bx-x d-block d-sm-none"></i>
+                                            <span class="d-none d-sm-block">Close</span>
+                                        </button>
+                                        <button class="btn btn-primary ml-1">
+                                            <i class="bx bx-check d-block d-sm-none"></i>
+                                            <span class="d-none d-sm-block">Iya</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </tr>
                 @endforeach
             </tbody>
