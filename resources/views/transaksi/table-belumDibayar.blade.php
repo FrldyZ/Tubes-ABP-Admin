@@ -17,13 +17,15 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($transaksis as $transaksi)
                 <tr>
-                    <td>$id</td>
-                    <td>$tanggal</td>
-                    <td>$total harga</td>
-                    <td><a href="/pemesanan">Detail</a></td>
+                    <td>{{ $transaksi->id }}</td>
+                    <td>{{ $transaksi->tanggal_dipesan }}</td>
+                    <td>{{ $transaksi->total_harga }}</td>
+                    <td><a href="/transaksi/belum_bayar/{{ $transaksi->id }}/view">Detail</a></td>
                     <td></td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

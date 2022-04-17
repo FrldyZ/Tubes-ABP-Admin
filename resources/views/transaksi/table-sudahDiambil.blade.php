@@ -6,26 +6,31 @@
 @section('content')
 <div class="card">
     <div class="card-body">
+        @if (session()->has('Success'))
+            <div class="alert alert-success" role="alert">{{ session('Success') }}</div>
+        @endif
         <table class="table table-striped" id="table1">
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>pemesan</th>
                     <th>Tanggal Pemesanan</th>
                     <th>Tanggal Pembayaran</th>
-                    <th>Tanggal Diambil</th>
                     <th>Total Harga</th>
                     <th>Pesanan</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach($transaksis as $transaksi)
                 <tr>
-                    <td>$id</td>
-                    <td>$tanggal</td>
-                    <td>$tanggal</td>
-                    <td>$tanggal</td>
-                    <td>$total harga</td>
-                    <td><a href="/pemesanan">Detail</a></td>
+                    <td>{{ $transaksi->id }}</td>
+                    <td>{{ $transaksi->username_pengguna }}</td>
+                    <td>{{ $transaksi->tanggal_dipesan }}</td>
+                    <td>{{ $transaksi->tanggal_dibayar }}</td>
+                    <td>{{ $transaksi->total_harga }}</td>
+                    <td><a href="/transaksi/sudah_ambil/{{ $transaksi->id }}/view">Detail</a></td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
