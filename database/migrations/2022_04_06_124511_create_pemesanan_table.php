@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('pesanan', function (Blueprint $table) {
             $table->id();
             $table->integer('jumlah_item');
-            $table->date('tanggal_pemesanan');
             // foreign key: id_oleh
             $table->bigInteger('id_oleh')->unsigned();
             $table->foreign('id_oleh')->references('id')->on('oleh');

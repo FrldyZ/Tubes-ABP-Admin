@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('total_harga');
+            $table->bigInteger('total_harga')->default(0);
             $table->date('tanggal_dipesan');
-            $table->date('tanggal_dibayar');
+            $table->date('tanggal_dibayar')->nullable();
             $table->string('status');
             // foreign key: pengguna
             $table->string('username_pengguna',100);

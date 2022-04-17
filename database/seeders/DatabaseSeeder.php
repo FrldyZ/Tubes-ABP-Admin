@@ -112,33 +112,33 @@ class DatabaseSeeder extends Seeder
         // transaksi
         $transaksi = new transaksi();
         $transaksi->username_pengguna = 'babaksabri';
-        $transaksi->tanggal_pemesanan = '15-04-2022';
+        $transaksi->tanggal_dipesan = '15-04-2022';
         $transaksi->status='batal';
         $transaksi->save();
 
         $transaksi = new transaksi();
         $transaksi->username_pengguna = 'macwill';
-        $transaksi->tanggal_pemesanan = '16-04-2022';
+        $transaksi->tanggal_dipesan = '16-04-2022';
         $transaksi->status='belum dibayar';
         $transaksi->save();
 
         $transaksi = new transaksi();
         $transaksi->username_pengguna = 'diabbs';
-        $transaksi->tanggal_pemesanan = '23-04-2022';
+        $transaksi->tanggal_dipesan = '23-04-2022';
         $transaksi->tanggal_pembayaran = '23-04-2022';
         $transaksi->status='belum diambil';
         $transaksi->save();
 
         $transaksi = new transaksi();
         $transaksi->username_pengguna = 'hencle';
-        $transaksi->tanggal_pemesanan = '10-05-2022';
+        $transaksi->tanggal_dipesan = '10-05-2022';
         $transaksi->tanggal_pembayaran = '10-05-2022';
         $transaksi->status='sudah diambil';
         $transaksi->save();
 
         $transaksi = new transaksi();
         $transaksi->username_pengguna = 'josbarr';
-        $transaksi->tanggal_pemesanan = '17-05-2022';
+        $transaksi->tanggal_dipesan = '17-05-2022';
         $transaksi->status='belum dibayar';
         $transaksi->save();
 
