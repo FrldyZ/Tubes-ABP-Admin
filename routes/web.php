@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\olehController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\penggunaController;
+use App\Http\Controllers\adminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\pemesananController;
 use App\Http\Controllers\transaksi\batalController;
@@ -40,6 +41,7 @@ Route::post('/oleh/edit/{id}',[olehController::class,'edit'])->middleware('auth:
 Route::post('/oleh/delete/{id}', [olehController::class,'delete'])->middleware('auth:admin');
 
 Route::get('/pengguna', [penggunaController::class,'index'])->middleware('auth:admin');
+Route::get('/admin', [adminController::class,'index'])->middleware('auth:admin');
 
 Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
