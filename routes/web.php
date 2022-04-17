@@ -49,6 +49,7 @@ Route::get('/transaksi/batal', [batalController::class,'index'])->middleware('au
 Route::get('/transaksi/batal/{id}/view', [batalController::class,'view'])->middleware('auth:admin');
 Route::get('/transaksi/belum_bayar', [belumBayarController::class,'index'])->middleware('auth:admin');
 Route::get('/transaksi/belum_ambil', [belumAmbilController::class,'index'])->middleware('auth:admin');
-Route::get('/transaksi/belum_ambil/{id}/view', [batalController::class,'view'])->middleware('auth:admin');
+Route::get('/transaksi/belum_ambil/{id}/view', [belumAmbilController::class,'view'])->middleware('auth:admin');
+Route::post('transaksi/belum_ambil/{id}/konfirmasi', [belumAmbilController::class,'confirm'])->middleware('auth:admin');
 Route::get('/transaksi/sudah_ambil', [sudahAmbilController::class,'index'])->middleware('auth:admin');
 

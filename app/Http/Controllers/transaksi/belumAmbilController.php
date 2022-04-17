@@ -29,4 +29,11 @@ class belumAmbilController extends Controller
             'countPesanans' => $pesanans->count()
         ]);
     }
+
+    public function confirm($id){
+        $transaksi = transaksi::find($id);
+        $transaksi->status = 'sudah diambil';
+        $transaksi->save();
+        return redirect('transaksi/belum_ambil')->with('Success', 'Data transaksi berhasil dikonfirmasi');
+    }
 }
