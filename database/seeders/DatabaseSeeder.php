@@ -8,6 +8,7 @@ use App\Models\pesanan;
 use App\Models\pengguna;
 use App\Models\transaksi;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -161,12 +162,22 @@ class DatabaseSeeder extends Seeder
         $pesanan->id_transaksi = 1;
         $pesanan->save();
 
+        $transaksi= transaksi::find(1);
+        $transaksi->total_harga= DB::table('transaksi')
+            ->join('pesanan', 'transaksi.id', '=', 'pesanan.id_transaksi')
+            ->join('oleh', 'pesanan.id_oleh','=','oleh.id')
+            ->where('transaksi.id','=','1')
+            ->sum(DB::raw('pesanan.jumlah_item*oleh.harga'));
+        $transaksi->save();
+
         //pesanan id_transaksi 2
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 5;
         $pesanan->id_oleh = 2;
         $pesanan->id_transaksi = 2;
         $pesanan->save();
+
+        //
 
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 7;
