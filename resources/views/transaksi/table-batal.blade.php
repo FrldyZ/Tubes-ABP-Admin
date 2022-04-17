@@ -10,18 +10,22 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Pemesan</th>
                     <th>Tanggal Pemesanan</th>
                     <th>Total Harga</th>
                     <th>Pesanan</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach($transaksis as $transaksi)
                 <tr>
-                    <td>$id</td>
-                    <td>$tanggal</td>
-                    <td>$total harga</td>
+                    <td>{{ $transaksi->id }}</td>
+                    <td>{{ $transaksi->username_pengguna }}</td>
+                    <td>{{ $transaksi->tanggal_dipesan }}</td>
+                    <td>{{ $transaksi->total_harga }}</td>
                     <td><a href="/pemesanan">Detail</a></td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
@@ -29,7 +33,6 @@
 @endsection
 @section('script')
 <script>
-    // Simple Datatable
     let table1 = document.querySelector('#table1');
     let dataTable = new simpleDatatables.DataTable(table1);
 </script>
