@@ -47,7 +47,7 @@
                         </li>
                         <li class="sidebar-item {{ Request::is('pengguna') ? 'active' : '' }}  ">
                             <a href="/pengguna" class='sidebar-link'>
-                                <i class="bi bi-file-person"></i>
+                                <i class="iconly-boldProfile"></i>
                                 <span>Pengguna</span>
                             </a>
                         </li>
