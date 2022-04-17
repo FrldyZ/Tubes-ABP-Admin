@@ -6,9 +6,6 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        @if (session()->has('Success'))
-            <div class="alert alert-success" role="alert">{{ session('Success') }}</div>
-        @endif
         <table class="table table-striped" id="table1">
             <thead>
                 <tr>
