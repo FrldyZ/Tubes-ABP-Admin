@@ -23,7 +23,7 @@
                     <td>{{ $transaksi->username_pengguna }}</td>
                     <td>{{ $transaksi->tanggal_dipesan }}</td>
                     <td>{{ $transaksi->total_harga }}</td>
-                    <td><a href="/pemesanan">Detail</a></td>
+                    <td><a href="/transaksi/batal/{{ $transaksi->id }}/view">Detail</a></td>
                 </tr>
                 @endforeach
             </tbody>

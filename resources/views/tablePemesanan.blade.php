@@ -73,7 +73,7 @@
                 <h4>Cart
                     <span class="price" style="color:black">
                         <i class="fa fa-shopping-cart"></i>
-                        <b>4</b>
+                        <b>{{ $countPesanans }}</b>
                     </span>
                 </h4>
                 <table class="center">
@@ -81,19 +81,21 @@
                         <tr>
                             <th scope="col" style=" width: 50%;">ID Pemesanan</th>
                             <th scope="col" style=" width: 25%;">Nama Barang</th>
-                            <th scope="col" style=" width: 25%;">Harga</th>
+                            <th scope="col" style=" width: 25%;">Harga(Rp)</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($pesanans as $pesanan)
                         <tr>
-                            <td class="text-bold-500">ID</td>
-                            <td class="text-bold-500">nambar</td>
-                            <td class="text-bold-500">harga</td>
+                            <td class="text-bold-500">{{ $pesanan->id }}</td>
+                            <td class="text-bold-500">{{ $pesanan->nama }}</td>
+                            <td class="text-bold-500">{{ $pesanan->harga." (".$pesanan->jumlah_item."x)"}}</td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 <hr>
-                <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+                <p>Total <span class="price" style="color:black"><b>{{ "Rp".$transaksi->total_harga }}</b></span></p>
             </div>
         </div>
     </div>

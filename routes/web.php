@@ -39,7 +39,6 @@ Route::post('/oleh/tambah',[olehController::class,'store'])->middleware('auth:ad
 Route::post('/oleh/edit/{id}',[olehController::class,'edit'])->middleware('auth:admin');
 Route::post('/oleh/delete/{id}', [olehController::class,'delete'])->middleware('auth:admin');
 
-Route::get('/pemesanan', [pemesananController::class,'index'])->middleware('auth:admin');
 Route::get('/pengguna', [penggunaController::class,'index'])->middleware('auth:admin');
 
 Route::get('/contact', function () {
@@ -47,7 +46,9 @@ Route::get('/contact', function () {
 });
 
 Route::get('/transaksi/batal', [batalController::class,'index'])->middleware('auth:admin');
+Route::get('/transaksi/batal/{id}/view', [batalController::class,'view'])->middleware('auth:admin');
 Route::get('/transaksi/belum_bayar', [belumBayarController::class,'index'])->middleware('auth:admin');
 Route::get('/transaksi/belum_ambil', [belumAmbilController::class,'index'])->middleware('auth:admin');
+Route::get('/transaksi/belum_ambil/{id}/view', [batalController::class,'view'])->middleware('auth:admin');
 Route::get('/transaksi/sudah_ambil', [sudahAmbilController::class,'index'])->middleware('auth:admin');
 
