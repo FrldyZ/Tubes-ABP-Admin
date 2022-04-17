@@ -41,7 +41,6 @@ Route::post('/oleh/edit/{id}',[olehController::class,'edit'])->middleware('auth:
 Route::post('/oleh/delete/{id}', [olehController::class,'delete'])->middleware('auth:admin');
 
 Route::get('/pengguna', [penggunaController::class,'index'])->middleware('auth:admin');
-Route::get('/admin', [adminController::class,'index'])->middleware('auth:admin');
 
 Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);

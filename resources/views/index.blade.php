@@ -1,7 +1,7 @@
 @extends('layouts/main');
 
 @section('heading')
-    <h3>Oleh-Shop Statistics</h3>
+<h3>Oleh-Shop Statistics</h3>
 @endsection
 
 @section('content')
@@ -81,12 +81,35 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Profile Visit</h4>
+                        <h4>Registered Admin</h4>
                     </div>
                     <div class="card-body">
-                        <div id="chart-profile-visit"></div>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Email</th>
+                                                <th>Username</th>
+                                            </tr>
+                                            @php $no=0; @endphp
+                                            @foreach($data_admin as $item)
+                                            @php $no++; @endphp
+                                            <tr>
+                                                <td>{{$item['id']}}</td>
+                                                <td>{{$item['email']}}</td>
+                                                <td>{{$item['username']}}</td>
+                                            </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-@endsection
+        @endsection
