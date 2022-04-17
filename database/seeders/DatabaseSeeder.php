@@ -113,14 +113,12 @@ class DatabaseSeeder extends Seeder
         $transaksi = new transaksi();
         $transaksi->username_pengguna = 'babaksabri';
         $transaksi->tanggal_pemesanan = '15-04-2022';
-        //$transaksi->tanggal_pembayaran = '15-04-2022';
         $transaksi->status='batal';
         $transaksi->save();
 
         $transaksi = new transaksi();
         $transaksi->username_pengguna = 'macwill';
         $transaksi->tanggal_pemesanan = '16-04-2022';
-        //$transaksi->tanggal_pembayaran = '16-04-2022';
         $transaksi->status='belum dibayar';
         $transaksi->save();
 
@@ -141,7 +139,6 @@ class DatabaseSeeder extends Seeder
         $transaksi = new transaksi();
         $transaksi->username_pengguna = 'josbarr';
         $transaksi->tanggal_pemesanan = '17-05-2022';
-        //$transaksi->tanggal_pembayaran = '17-05-2022';
         $transaksi->status='belum dibayar';
         $transaksi->save();
 
