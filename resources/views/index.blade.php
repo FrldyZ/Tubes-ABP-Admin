@@ -14,7 +14,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="stats-icon purple">
-                                    <i class="bi bi-shop"></i>
+                                    <i data-feather="package" color="white"></i>
                                 </div>
                             </div>
                             <div class="col-md-8">
@@ -31,7 +31,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="stats-icon blue">
-                                    <i class="iconly-boldProfile"></i>
+                                    <i data-feather="user-check" color="white"></i>
                                 </div>
                             </div>
                             <div class="col-md-8">
@@ -48,7 +48,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="stats-icon green">
-                                    <i class="iconly-boldProfile"></i>
+                                    <i data-feather="users" color="white"></i>
                                 </div>
                             </div>
                             <div class="col-md-8">
