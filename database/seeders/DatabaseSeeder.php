@@ -43,45 +43,45 @@ class DatabaseSeeder extends Seeder
 
         // pengguna
         $pengguna = new pengguna();
-        $pengguna->username = 'eschreck';
-        $pengguna->nama = 'esch reck';
+        $pengguna->username = 'macwill';
+        $pengguna->nama = 'Cormac William';
         $pengguna->telepon = '081288818282';
-        $pengguna->password = Hash::make('eshhrck');
+        $pengguna->password = Hash::make('macwi');
         $pengguna->save();
 
         $pengguna = new pengguna();
         $pengguna->username = 'cliffhanger1988';
-        $pengguna->nama = 'cliff hanger';
+        $pengguna->nama = 'Cliff Hanger';
         $pengguna->telepon = '081288818283';
         $pengguna->password = Hash::make('clifs');
         $pengguna->save();
 
         $pengguna = new pengguna();
         $pengguna->username = 'babaksabri';
-        $pengguna->nama = 'babak sabri';
+        $pengguna->nama = 'Babak Sabri';
         $pengguna->telepon = '081288818284';
         $pengguna->password = Hash::make('babaksa');
         $pengguna->save();
         
         $pengguna = new pengguna();
-        $pengguna->username = 'and117333';
-        $pengguna->nama = 'andy sabri';
+        $pengguna->username = 'josbarr';
+        $pengguna->nama = 'Joseff Barry';
         $pengguna->telepon = '081288818285';
-        $pengguna->password = Hash::make('and1173');
+        $pengguna->password = Hash::make('ffbarr');
         $pengguna->save();
 
         $pengguna = new pengguna();
-        $pengguna->username = 'katgen';
-        $pengguna->nama = 'katgen sabri';
+        $pengguna->username = 'hencle';
+        $pengguna->nama = 'Kohen Clements';
         $pengguna->telepon = '081288818286';
-        $pengguna->password = Hash::make('katge');
+        $pengguna->password = Hash::make('clement');
         $pengguna->save();
 
         $pengguna = new pengguna();
-        $pengguna->username = 'clcvulb';
-        $pengguna->nama = 'clcvulb sabri';
+        $pengguna->username = 'diabbs';
+        $pengguna->nama = 'Sadia Gibbs';
         $pengguna->telepon = '081288818287';
-        $pengguna->password = Hash::make('clcvu');
+        $pengguna->password = Hash::make('sadbbs');
         $pengguna->save();
 
         // oleh
@@ -111,47 +111,60 @@ class DatabaseSeeder extends Seeder
 
         // transaksi
         $transaksi = new transaksi();
-        $transaksi->username_pengguna = 'cliffhanger1988';
+        $transaksi->username_pengguna = 'babaksabri';
         $transaksi->tanggal_pemesanan = '15-04-2022';
         //$transaksi->tanggal_pembayaran = '15-04-2022';
         $transaksi->status='batal';
         $transaksi->save();
 
         $transaksi = new transaksi();
-        $transaksi->username_pengguna = 'eschreck';
+        $transaksi->username_pengguna = 'macwill';
         $transaksi->tanggal_pemesanan = '16-04-2022';
         //$transaksi->tanggal_pembayaran = '16-04-2022';
         $transaksi->status='belum dibayar';
         $transaksi->save();
 
         $transaksi = new transaksi();
-        $transaksi->username_pengguna = 'and117333';
+        $transaksi->username_pengguna = 'diabbs';
         $transaksi->tanggal_pemesanan = '23-04-2022';
         $transaksi->tanggal_pembayaran = '23-04-2022';
         $transaksi->status='belum diambil';
         $transaksi->save();
 
         $transaksi = new transaksi();
-        $transaksi->username_pengguna = 'katgen';
+        $transaksi->username_pengguna = 'hencle';
         $transaksi->tanggal_pemesanan = '10-05-2022';
         $transaksi->tanggal_pembayaran = '10-05-2022';
         $transaksi->status='sudah diambil';
         $transaksi->save();
 
         $transaksi = new transaksi();
-        $transaksi->username_pengguna = 'clcvulb';
+        $transaksi->username_pengguna = 'josbarr';
         $transaksi->tanggal_pemesanan = '17-05-2022';
         //$transaksi->tanggal_pembayaran = '17-05-2022';
         $transaksi->status='belum dibayar';
         $transaksi->save();
 
-        // pesanan
+        // pesanan id_transaksi 1
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 3;
         $pesanan->id_oleh = 1;
         $pesanan->id_transaksi = 1;
         $pesanan->save();
 
+        $pesanan= new pesanan();
+        $pesanan->jumlah_item = 5;
+        $pesanan->id_oleh = 2;
+        $pesanan->id_transaksi = 1;
+        $pesanan->save();
+
+        $pesanan= new pesanan();
+        $pesanan->jumlah_item = 3;
+        $pesanan->id_oleh = 3;
+        $pesanan->id_transaksi = 1;
+        $pesanan->save();
+
+        //pesanan id_transaksi 2
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 5;
         $pesanan->id_oleh = 2;
