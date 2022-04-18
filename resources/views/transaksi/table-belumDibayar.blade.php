@@ -13,6 +13,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Pemesan</th>
                     <th>Tanggal Pemesanan</th>
                     <th>Total Harga</th>
                     <th>Pesanan</th>
@@ -23,6 +24,7 @@
                 @foreach($transaksis as $transaksi)
                 <tr>
                     <td>{{ $transaksi->id }}</td>
+                    <td>{{ $transaksi->username_pengguna }}</td>
                     <td>{{ $transaksi->tanggal_dipesan }}</td>
                     <td>{{ $transaksi->total_harga }}</td>
                     <td><a href="/transaksi/belum_bayar/{{ $transaksi->id }}/view">Detail</a></td>

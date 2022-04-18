@@ -67,6 +67,8 @@
 </style>
 
 <body>
+    <p>ID <span class="price" style="color:black"><b>{{ "Rp".$transaksi->total_harga }}</b></span></p>
+    <p>pemesan <span class="price" style="color:black"><b>{{ "Rp".$transaksi->total_harga }}</b></span></p>
     <div class="row">
         <div class="col-25">
             <div class="container">
@@ -79,15 +81,13 @@
                 <table class="center">
                     <thead>
                         <tr>
-                            <th scope="col" style=" width: 50%;">ID Pemesanan</th>
-                            <th scope="col" style=" width: 25%;">Nama Barang</th>
+                            <th scope="col" style=" width: 50%;">Nama Barang</th>
                             <th scope="col" style=" width: 25%;">Harga(Rp)</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($pesanans as $pesanan)
                         <tr>
-                            <td class="text-bold-500">{{ $pesanan->id }}</td>
                             <td class="text-bold-500">{{ $pesanan->nama }}</td>
                             <td class="text-bold-500">{{ $pesanan->harga." (".$pesanan->jumlah_item."x)"}}</td>
                         </tr>

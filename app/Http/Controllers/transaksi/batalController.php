@@ -38,6 +38,6 @@ class batalController extends Controller
         $transaksi = transaksi::find($id);
         $transaksi->status = 'batal';
         $transaksi->save();
-        return redirect('transaksi/belum_ambil')->with('Success', 'Data transaksi berhasil dikonfirmasi');
+        return redirect('transaksi/belum_ambil')->with('Success', 'Data transaksi berhasil dibatalkan');
     }
 }
