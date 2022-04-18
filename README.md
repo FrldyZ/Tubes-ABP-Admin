@@ -1,3 +1,6 @@
+<li>Nama Aplikasi: Oleh-Shop (Admin)
+<li>Fungsi: Untuk menjual oleh oleh
+
 Kelompok 12:
 1. Kevin Adrian Manurung - 1301190392
 2. Imam Rasyidin Saputra - 1301194448
