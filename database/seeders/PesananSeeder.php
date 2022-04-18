@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\oleh;
 use App\Models\pesanan;
 use App\Models\transaksi;
 use Illuminate\Database\Seeder;
@@ -85,6 +86,22 @@ class PesananSeeder extends Seeder
             ->where('transaksi.id','=',$transaksi->id)
             ->sum(DB::raw('pesanan.jumlah_item*oleh.harga'));
             $transaksi->save();
+        }
+
+        //tambah jumlah hasil penjualan oleh
+        $transaksis = DB::table('transaksi')
+            ->where('status','=','belum diambil')
+            ->orWhere('status','=','sudah diambil')
+            ->get();
+        foreach ($transaksis as $transaksi){
+            $pesanans = DB::table('pesanan')
+                ->where('id_transaksi','=',$transaksi->id)
+                ->get();
+            foreach($pesanans as $pesanan){
+                $oleh = oleh::find($pesanan->id_oleh);
+                $oleh->terjual += $pesanan->jumlah_item;
+                $oleh->save();
+            }
         }
     }
 }
