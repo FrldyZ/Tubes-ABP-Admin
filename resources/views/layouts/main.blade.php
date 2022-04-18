@@ -74,7 +74,7 @@
                         <li class="sidebar-item {{ Request::is('contact') ? 'active' : '' }}  ">
                             <a href="/contact" class='sidebar-link'>
                                 <i class="bi bi-file-person"></i>
-                                <span>About Us</span>
+                                <span>About UUs</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
