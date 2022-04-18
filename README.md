@@ -1,7 +1,7 @@
 Kelompok 12:
--Kevin Adrian Manurung - 1301190392
--Imam Rasyidin Saputra - 1301194448
--Christhofer Laurent Juliant - 1301190379
+1.Kevin Adrian Manurung - 1301190392
+2.Imam Rasyidin Saputra - 1301194448
+3.Christhofer Laurent Juliant - 1301190379
 
 
 Sebelum dijalankan harus melakukan :
