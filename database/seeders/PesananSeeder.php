@@ -36,14 +36,6 @@ class PesananSeeder extends Seeder
         $pesanan->id_transaksi = 1;
         $pesanan->save();
 
-        $transaksi= transaksi::find(1);
-        $transaksi->total_harga= DB::table('transaksi')
-            ->join('pesanan', 'transaksi.id', '=', 'pesanan.id_transaksi')
-            ->join('oleh', 'pesanan.id_oleh','=','oleh.id')
-            ->where('transaksi.id','=','1')
-            ->sum(DB::raw('pesanan.jumlah_item*oleh.harga'));
-        $transaksi->save();
-
         //pesanan id_transaksi 2
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 5;
@@ -63,28 +55,12 @@ class PesananSeeder extends Seeder
         $pesanan->id_transaksi = 2;
         $pesanan->save();
 
-        $transaksi= transaksi::find(2);
-        $transaksi->total_harga= DB::table('transaksi')
-            ->join('pesanan', 'transaksi.id', '=', 'pesanan.id_transaksi')
-            ->join('oleh', 'pesanan.id_oleh','=','oleh.id')
-            ->where('transaksi.id','=','2')
-            ->sum(DB::raw('pesanan.jumlah_item*oleh.harga'));
-        $transaksi->save();
-
         //pesanan id_transaksi 3
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 7;
         $pesanan->id_oleh = 2;
         $pesanan->id_transaksi = 3;
         $pesanan->save();
-
-        $transaksi= transaksi::find(3);
-        $transaksi->total_harga= DB::table('transaksi')
-            ->join('pesanan', 'transaksi.id', '=', 'pesanan.id_transaksi')
-            ->join('oleh', 'pesanan.id_oleh','=','oleh.id')
-            ->where('transaksi.id','=','3')
-            ->sum(DB::raw('pesanan.jumlah_item*oleh.harga'));
-        $transaksi->save();
         
         //pesanan id_transaksi 4
         $pesanan= new pesanan();
@@ -93,14 +69,6 @@ class PesananSeeder extends Seeder
         $pesanan->id_transaksi = 4;
         $pesanan->save();
 
-        $transaksi= transaksi::find(4);
-        $transaksi->total_harga= DB::table('transaksi')
-            ->join('pesanan', 'transaksi.id', '=', 'pesanan.id_transaksi')
-            ->join('oleh', 'pesanan.id_oleh','=','oleh.id')
-            ->where('transaksi.id','=','4')
-            ->sum(DB::raw('pesanan.jumlah_item*oleh.harga'));
-        $transaksi->save();
-
         //pesanan id_transaksi 5
         $pesanan= new pesanan();
         $pesanan->jumlah_item = 8;
@@ -108,12 +76,15 @@ class PesananSeeder extends Seeder
         $pesanan->id_transaksi = 5;
         $pesanan->save();
 
-        $transaksi= transaksi::find(5);
-        $transaksi->total_harga= DB::table('transaksi')
+        //update total harga transaksi
+        $transaksis= transaksi::all();
+        foreach($transaksis as $transaksi){
+            $transaksi->total_harga= DB::table('transaksi')
             ->join('pesanan', 'transaksi.id', '=', 'pesanan.id_transaksi')
             ->join('oleh', 'pesanan.id_oleh','=','oleh.id')
-            ->where('transaksi.id','=','5')
+            ->where('transaksi.id','=',$transaksi->id)
             ->sum(DB::raw('pesanan.jumlah_item*oleh.harga'));
-        $transaksi->save();
+            $transaksi->save();
+        }
     }
 }
