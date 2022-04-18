@@ -67,8 +67,8 @@
 </style>
 
 <body>
-    <p>ID <span class="price" style="color:black"><b>{{ "Rp".$transaksi->total_harga }}</b></span></p>
-    <p>pemesan <span class="price" style="color:black"><b>{{ "Rp".$transaksi->total_harga }}</b></span></p>
+    <p>ID Transaksi<span class="price" style="color:black"><b>{{ $transaksi->id }}</b></span></p>
+    <p>pemesan <span class="price" style="color:black"><b>{{ $transaksi->username_pengguna }}</b></span></p>
     <div class="row">
         <div class="col-25">
             <div class="container">

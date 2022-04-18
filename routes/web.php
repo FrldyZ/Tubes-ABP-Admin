@@ -48,15 +48,18 @@ Route::get('/contact', function () {
 //batal
 Route::get('/transaksi/batal', [batalController::class,'index'])->middleware('auth:admin');
 Route::get('/transaksi/batal/{id}/view', [batalController::class,'view'])->middleware('auth:admin');
-Route::post('/transaksi/batal/{id}/konfirmasi', [batalController::class,'confirm'])->middleware('auth:admin');
-//belumbayar
+
+//belum bayar
 Route::get('/transaksi/belum_bayar', [belumBayarController::class,'index'])->middleware('auth:admin');
 Route::get('/transaksi/belum_bayar/{id}/view', [belumBayarController::class,'view'])->middleware('auth:admin');
 Route::post('/transaksi/belum_bayar/{id}/konfirmasi', [belumBayarController::class,'confirm'])->middleware('auth:admin');
-//belumambil
+Route::post('/transaksi/belum_bayar/{id}/batal', [belumBayarController::class,'batal'])->middleware('auth:admin');
+
+//belum ambil
 Route::get('/transaksi/belum_ambil', [belumAmbilController::class,'index'])->middleware('auth:admin');
 Route::get('/transaksi/belum_ambil/{id}/view', [belumAmbilController::class,'view'])->middleware('auth:admin');
 Route::post('transaksi/belum_ambil/{id}/konfirmasi', [belumAmbilController::class,'confirm'])->middleware('auth:admin');
-//sudahambil
+
+//sudah ambil
 Route::get('/transaksi/sudah_ambil', [sudahAmbilController::class,'index'])->middleware('auth:admin');
 Route::get('/transaksi/sudah_ambil/{id}/view', [sudahAmbilController::class,'view'])->middleware('auth:admin');

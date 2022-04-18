@@ -71,7 +71,7 @@
                                             <i data-feather="x"></i>
                                         </button>
                                     </div>
-                                    <form action="/transaksi/batal/{{ $transaksi->id }}/konfirmasi" method="post">
+                                    <form action="/transaksi/belum_bayar/{{ $transaksi->id }}/batal" method="post">
                                         @csrf
                                         <div class="modal-body">
                                             <p>
