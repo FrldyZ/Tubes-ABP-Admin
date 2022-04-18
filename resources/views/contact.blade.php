@@ -28,7 +28,7 @@
             <li><h7>linkedin/ChristhoferLaurent</h7></li>
         </div>
         <div class="col mt-5">
-            <img src="/assets/kevinn.jpg" alt="">
+            <img src="/assets/kevin.jpg" alt="">
             <h2>Kevin Adrian Manurung</h2>
             <li><h7>kevinadrian@student.telkomuniversity.ac.id</h7></li>
             <li><h7>linkedin/KevinAdrian</h7></li>
