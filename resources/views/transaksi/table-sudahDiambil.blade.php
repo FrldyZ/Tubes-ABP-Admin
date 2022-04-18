@@ -10,7 +10,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>pemesan</th>
+                    <th>Pemesan</th>
                     <th>Tanggal Pemesanan</th>
                     <th>Tanggal Pembayaran</th>
                     <th>Total Harga</th>
