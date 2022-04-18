@@ -33,4 +33,11 @@ class batalController extends Controller
             'countPesanans' => $pesanans->count()
         ]);
     }
+
+    public function confirm($id){
+        $transaksi = transaksi::find($id);
+        $transaksi->status = 'batal';
+        $transaksi->save();
+        return redirect('transaksi/belum_ambil')->with('Success', 'Data transaksi berhasil dikonfirmasi');
+    }
 }

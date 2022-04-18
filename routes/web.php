@@ -55,3 +55,4 @@ Route::post('transaksi/belum_ambil/{id}/konfirmasi', [belumAmbilController::clas
 Route::get('/transaksi/sudah_ambil', [sudahAmbilController::class,'index'])->middleware('auth:admin');
 Route::get('/transaksi/sudah_ambil/{id}/view', [sudahAmbilController::class,'view'])->middleware('auth:admin');
 Route::post('/transaksi/belum_bayar/{id}/konfirmasi', [belumBayarController::class,'confirm'])->middleware('auth:admin');
+Route::post('/transaksi/batal/{id}/konfirmasi', [batalController::class,'confirm'])->middleware('auth:admin');
