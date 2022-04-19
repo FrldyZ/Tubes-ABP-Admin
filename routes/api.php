@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\PenggunaAPIController;
+use App\Http\Controllers\API\transaksiPesananAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('pengguna/register',[PenggunaAPIController::class,'register']);
+Route::post('transaksi_pesanan/tambah',[transaksiPesananAPIController::class,'tambah']);
+
