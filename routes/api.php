@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\olehAPIController;
 use App\Http\Controllers\API\PenggunaAPIController;
 use App\Http\Controllers\API\transaksiPesananAPIController;
 
@@ -21,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('pengguna/register',[PenggunaAPIController::class,'register']);
 Route::post('transaksi_pesanan/tambah',[transaksiPesananAPIController::class,'tambah']);
+Route::get('oleh/get/{id?}',[olehAPIController::class,'get']);
 
