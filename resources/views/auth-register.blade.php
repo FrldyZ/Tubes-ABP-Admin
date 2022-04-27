@@ -64,7 +64,7 @@
                         <button class="btn btn-warning btn-block btn-lg shadow-lg mt-5">Sign Up</button>
                     </form>
                     <div class="text-center mt-5 text-lg fs-4">
-                        <p class='text-gray-600'>Already have an account? wawa
+                        <p class='text-gray-600'>Already have an account? 
                             <a href="/login" class="font-bold">Log in</a>.</p>
                     </div>
                 </div>
