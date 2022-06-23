@@ -33,4 +33,17 @@ class transaksiPesananAPIController extends Controller
 
         return ["Hasil"=>"Transaksi telah dibuat dengan id ".$transaksi->id];
     }
+
+    public function get($username){
+        $data = [];
+        $data_transaksi =  transaksi::where('username_pengguna', $username)->get();
+        foreach($data_transaksi as $transaksi){
+            array_push(
+                $data,
+                ["transaksi" => $transaksi,
+                "pesanan" => pesanan::where('id_transaksi', $transaksi->id)->get()]
+            );
+        }
+        return $data;
+    }
 }

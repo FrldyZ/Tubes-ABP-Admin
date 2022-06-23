@@ -23,4 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('pengguna/register',[PenggunaAPIController::class,'register']);
 Route::post('transaksi_pesanan/tambah',[transaksiPesananAPIController::class,'tambah']);
 Route::get('oleh/get/{id?}',[olehAPIController::class,'get']);
+Route::get('transaksi_pesanan/get/{username}',[transaksiPesananAPIController::class,'get']);
 
